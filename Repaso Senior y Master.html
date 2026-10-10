@@ -1,0 +1,738 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Repaso Senior y Master</title>
+<meta name="description" content="Flashcards interactivas del assessment Pragma (Advanced → Senior → Master) con ejemplo fácil y cómo se trabaja cada tema en Entitlement.">
+<style>
+  :root{
+    --bg:#f2f4f6;
+    --surface:#ffffff;
+    --surface-2:#e8ebee;
+    --text:#1a222c;
+    --text-dim:#57626d;
+    --border:#dde2e7;
+    --accent:#c9631f;
+    --accent-ink:#ffffff;
+    --senior:#2f6f6a;
+    --senior-bg:#e3f0ee;
+    --advanced:#7a5cc4;
+    --advanced-bg:#ece7f9;
+    --trainer:#3b6fb0;
+    --trainer-bg:#e5edf8;
+    --manifiesto:#b0473b;
+    --manifiesto-bg:#f8e7e5;
+    --practica:#2e6f8e;
+    --practica-bg:#e4eef4;
+    --junior:#7a6c2e;
+    --junior-bg:#f2eddb;
+    --resumen:#6b3fa0;
+    --resumen-bg:#ede4f5;
+    --master:#a3304f;
+    --master-bg:#f8e4ea;
+    --ok:#2e8b57;
+    --shadow: 0 1px 2px rgba(20,30,40,.06), 0 8px 24px -12px rgba(20,30,40,.18);
+    --radius:14px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#11171d;
+      --surface:#1a232b;
+      --surface-2:#212c35;
+      --text:#e9edf0;
+      --text-dim:#9aa7b1;
+      --border:#2b3742;
+      --accent:#e2954f;
+      --accent-ink:#1a1207;
+      --senior:#5fb3ac;
+      --senior-bg:#173330;
+      --advanced:#a893e6;
+      --advanced-bg:#241f3a;
+      --trainer:#7fa8dd;
+      --trainer-bg:#182534;
+      --manifiesto:#e2857c;
+      --manifiesto-bg:#3a2220;
+      --practica:#7fb8d9;
+      --practica-bg:#1e2f38;
+      --junior:#d6c67f;
+      --junior-bg:#332f1e;
+      --resumen:#b795d9;
+      --resumen-bg:#2a2038;
+      --master:#e8849e;
+      --master-bg:#3b2029;
+      --ok:#5fbf87;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.5);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#11171d;
+    --surface:#1a232b;
+    --surface-2:#212c35;
+    --text:#e9edf0;
+    --text-dim:#9aa7b1;
+    --border:#2b3742;
+    --accent:#e2954f;
+    --accent-ink:#1a1207;
+    --senior:#5fb3ac;
+    --senior-bg:#173330;
+    --advanced:#a893e6;
+    --advanced-bg:#241f3a;
+    --trainer:#7fa8dd;
+    --trainer-bg:#182534;
+    --manifiesto:#e2857c;
+    --manifiesto-bg:#3a2220;
+    --practica:#7fb8d9;
+    --practica-bg:#1e2f38;
+    --junior:#d6c67f;
+    --junior-bg:#332f1e;
+    --resumen:#b795d9;
+    --resumen-bg:#2a2038;
+    --master:#e8849e;
+    --master-bg:#3b2029;
+    --ok:#5fbf87;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.5);
+  }
+
+  *{box-sizing:border-box}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:"IBM Plex Sans", -apple-system, "Segoe UI", sans-serif;
+    padding-inline:16px;
+    padding-block:24px 48px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+  .wrap{width:100%;max-width:920px;display:flex;flex-direction:column;gap:20px}
+
+  h1,h2{font-family:"Fraunces", Georgia, serif; text-wrap:balance; margin:0}
+  code{font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:.92em; background:var(--surface-2); padding:.1em .35em; border-radius:5px}
+
+  header{display:flex; flex-direction:column; gap:10px}
+  .top-row{display:flex; align-items:flex-start; justify-content:space-between; gap:12px; flex-wrap:wrap}
+  h1{font-size:clamp(1.6rem,4vw,2.1rem); font-weight:600; letter-spacing:-.01em}
+  .sub{color:var(--text-dim); font-size:.95rem; max-width:56ch}
+  .badge-today{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:.75rem;
+    letter-spacing:.03em;
+    text-transform:uppercase;
+    background:var(--accent);
+    color:var(--accent-ink);
+    padding:.4em .7em;
+    border-radius:999px;
+    white-space:nowrap;
+    box-shadow:var(--shadow);
+  }
+
+  .progress-row{display:flex; align-items:center; gap:10px}
+  .progress-track{flex:1; height:8px; border-radius:999px; background:var(--surface-2); overflow:hidden}
+  .progress-fill{height:100%; background:var(--ok); width:0%; transition:width .3s ease}
+  .progress-label{font-family:"IBM Plex Mono", monospace; font-size:.78rem; color:var(--text-dim); white-space:nowrap}
+
+  .controls{display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between}
+  .filters{display:flex; flex-wrap:wrap; gap:8px}
+  .chip{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:.8rem;
+    border:1px solid var(--border);
+    background:var(--surface);
+    color:var(--text-dim);
+    padding:.45em .9em;
+    border-radius:999px;
+    cursor:pointer;
+    transition:background .15s, color .15s, border-color .15s;
+  }
+  .chip[aria-pressed="true"]{background:var(--text); color:var(--bg); border-color:var(--text)}
+  .chip:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+
+  .right-controls{display:flex; gap:8px; align-items:center}
+  input[type="search"]{
+    font-family:inherit; font-size:.9rem;
+    background:var(--surface); color:var(--text);
+    border:1px solid var(--border); border-radius:10px;
+    padding:.5em .8em; min-width:0; width:170px;
+  }
+  input[type="search"]:focus-visible{outline:2px solid var(--accent); outline-offset:1px}
+
+  button.mode-btn{
+    font-family:"IBM Plex Mono", monospace; font-size:.82rem;
+    background:var(--accent); color:var(--accent-ink);
+    border:none; border-radius:10px; padding:.55em 1em; cursor:pointer;
+    box-shadow:var(--shadow);
+  }
+  button.mode-btn:focus-visible{outline:2px solid var(--text); outline-offset:2px}
+  button.ghost-btn{
+    font-family:"IBM Plex Mono", monospace; font-size:.82rem;
+    background:transparent; color:var(--text); border:1px solid var(--border);
+    border-radius:10px; padding:.55em 1em; cursor:pointer;
+  }
+
+  /* grid mode */
+  .groups{display:flex; flex-direction:column; gap:22px}
+  .groups[hidden]{display:none}
+  .group h2{font-size:1.05rem; display:flex; align-items:center; gap:8px; margin-bottom:10px}
+  .level-dot{width:10px; height:10px; border-radius:50%; display:inline-block}
+  .grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(260px,1fr)); gap:12px}
+
+  .card{
+    position:relative;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    min-height:180px;
+    cursor:pointer;
+    perspective:1200px;
+  }
+  .card-inner{
+    position:relative; width:100%; height:100%; min-height:180px;
+    transform-style:preserve-3d; transition:transform .5s cubic-bezier(.4,.1,.2,1);
+  }
+  .card.flipped .card-inner{transform:rotateY(180deg)}
+  .card-face{
+    position:absolute; inset:0; backface-visibility:hidden;
+    padding:16px; display:flex; flex-direction:column; gap:8px;
+    border-radius:var(--radius); overflow:auto;
+  }
+  .card-face.back{transform:rotateY(180deg); font-size:.88rem; line-height:1.5}
+  .card-face.back strong{color:var(--accent)}
+  .level-pill{
+    align-self:flex-start; font-family:"IBM Plex Mono", monospace; font-size:.68rem;
+    text-transform:uppercase; letter-spacing:.04em; padding:.25em .6em; border-radius:999px;
+  }
+  .level-pill.trainer{background:var(--trainer-bg); color:var(--trainer)}
+  .level-pill.advanced{background:var(--advanced-bg); color:var(--advanced)}
+  .level-pill.senior{background:var(--senior-bg); color:var(--senior)}
+  .level-pill.manifiesto{background:var(--manifiesto-bg); color:var(--manifiesto)}
+  .level-pill.practica{background:var(--practica-bg); color:var(--practica)}
+  .level-pill.junior{background:var(--junior-bg); color:var(--junior)}
+  .level-pill.resumen{background:var(--resumen-bg); color:var(--resumen)}
+  .level-pill.master{background:var(--master-bg); color:var(--master)}
+  .card{transition:height .3s ease}
+  .card-face.back p,.deck-face.back p{margin:.4em 0}
+  .card-face.back ul,.deck-face.back ul{margin:.3em 0; padding-left:1.1em}
+  .card-face.back li.sub,.deck-face.back li.sub{margin-left:1em; list-style:circle}
+  .card-face.back pre,.deck-face.back pre{margin:.4em 0; padding:.6em .8em; background:var(--surface-2); border-radius:8px; overflow-x:auto; font-size:.82em; line-height:1.4}
+  .card-face.back pre code,.deck-face.back pre code{background:none; padding:0}
+  .sep{border:none; border-top:1px dashed var(--border); margin:.9em 0 .5em}
+  .lbl{margin:.7em 0 .2em !important}
+  .card-title{font-family:"Fraunces", serif; font-size:1.05rem; font-weight:600}
+  .card-front-q{color:var(--text-dim); font-size:.88rem; line-height:1.45}
+  .card-hint{margin-top:auto; font-family:"IBM Plex Mono", monospace; font-size:.7rem; color:var(--text-dim); opacity:.7}
+
+  .review-row{display:flex; align-items:center; gap:6px; margin-top:4px; font-size:.78rem; color:var(--text-dim)}
+  .review-row input{accent-color:var(--ok)}
+
+  @media (prefers-reduced-motion: reduce){
+    .card-inner{transition:none}
+  }
+
+  /* deck mode */
+  .deck{display:none; flex-direction:column; align-items:center; gap:18px}
+  .deck.active{display:flex}
+  .deck-counter{font-family:"IBM Plex Mono", monospace; font-size:.82rem; color:var(--text-dim)}
+  .deck-card{
+    width:100%; max-width:520px; min-height:280px;
+    background:var(--surface); border:1px solid var(--border); border-radius:18px;
+    box-shadow:var(--shadow); padding:28px; display:flex; flex-direction:column; gap:14px;
+    cursor:pointer; perspective:1400px;
+  }
+  .deck-card-inner{position:relative; flex:1; transform-style:preserve-3d; transition:transform .5s cubic-bezier(.4,.1,.2,1); min-height:180px}
+  .deck-card.flipped .deck-card-inner{transform:rotateY(180deg)}
+  .deck-face{position:absolute; inset:0; backface-visibility:hidden; display:flex; flex-direction:column; gap:10px; overflow:auto}
+  .deck-face.back{transform:rotateY(180deg); font-size:.98rem; line-height:1.55}
+  .deck-face.back strong{color:var(--accent)}
+  .deck-front-q{font-size:1.15rem; line-height:1.4}
+  @media (prefers-reduced-motion: reduce){ .deck-card-inner{transition:none} }
+
+  .deck-actions{display:flex; gap:10px; flex-wrap:wrap; justify-content:center}
+  .deck-actions button{
+    font-family:"IBM Plex Mono", monospace; font-size:.82rem;
+    border-radius:10px; padding:.6em 1.1em; cursor:pointer; border:1px solid var(--border);
+    background:var(--surface); color:var(--text);
+  }
+  .deck-actions button.primary{background:var(--accent); color:var(--accent-ink); border-color:var(--accent)}
+  .deck-actions button.know{background:var(--ok); color:#fff; border-color:var(--ok)}
+  .deck-actions button:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+
+  .progress-actions{display:flex; gap:8px; flex-wrap:wrap}
+  button.ghost-btn.small{font-size:.75rem; padding:.4em .8em}
+  button.ghost-btn[aria-pressed="true"]{background:var(--text); color:var(--bg); border-color:var(--text)}
+  button.ghost-btn:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+  .empty-msg{color:var(--text-dim); font-size:.9rem; text-align:center; padding:24px 0}
+  footer{color:var(--text-dim); font-size:.78rem; text-align:center; margin-top:8px}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<div class="wrap">
+  <header>
+    <div class="top-row">
+      <div>
+        <h1>Repaso Senior y Master</h1>
+        <p class="sub">DDD, resiliencia, reactivo, GoF, Clean Architecture y el resto del assessment, ahora con el nivel Master. Cada tema trae un ejemplo fácil y cómo lo trabajamos en Entitlement.</p>
+      </div>
+      <span class="badge-today">Assessment · Senior → Master</span>
+    </div>
+    <div class="progress-row">
+      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+      <span class="progress-label" id="progressLabel">0 / 0 repasados</span>
+    </div>
+    <div class="progress-actions">
+      <button type="button" class="ghost-btn small" id="pendingToggle" aria-pressed="false">Solo pendientes</button>
+      <button type="button" class="ghost-btn small" id="resetProgress">Reiniciar</button>
+    </div>
+  </header>
+
+  <div class="controls">
+    <div class="filters" id="filters" role="group" aria-label="Filtrar por nivel"></div>
+    <div class="right-controls">
+      <input type="search" id="search" placeholder="Buscar tema…" aria-label="Buscar tema">
+      <button class="mode-btn" id="deckToggle" type="button">Modo repaso ▶</button>
+    </div>
+  </div>
+
+  <div class="groups" id="groups"></div>
+
+  <div class="deck" id="deck">
+    <span class="deck-counter" id="deckCounter"></span>
+    <div class="deck-card" id="deckCard" tabindex="0" role="button" aria-label="Tarjeta de repaso, toca para voltear">
+      <div class="deck-card-inner" id="deckCardInner">
+        <div class="deck-face front">
+          <span class="level-pill" id="deckLevelPill"></span>
+          <div class="card-title" id="deckTitle"></div>
+          <div class="deck-front-q" id="deckFront"></div>
+          <span class="card-hint">Toca la tarjeta o Enter para ver la respuesta</span>
+        </div>
+        <div class="deck-face back">
+          <div id="deckBack"></div>
+        </div>
+      </div>
+    </div>
+    <div class="deck-actions">
+      <button type="button" id="deckPrev">◀ Anterior</button>
+      <button type="button" id="deckShuffle">🔀 Aleatorio</button>
+      <button type="button" class="primary" id="deckKnow">Lo sé ✓</button>
+      <button type="button" id="deckNext">Siguiente ▶</button>
+    </div>
+    <button type="button" class="ghost-btn" id="backToGrid">← Volver a la lista</button>
+  </div>
+
+  <p class="empty-msg" id="emptyMsg" hidden>Nada coincide con ese filtro/búsqueda.</p>
+
+  <footer>Antes: repasa por nivel y usa "Solo pendientes". Durante: el filtro Resumen es tu guion. Después: anota en la guía lo que te preguntaron y repasa esos temas con "Reiniciar". Repasa cada tema pensando en el "por qué" y el "cuándo NO", y ten un ejemplo propio de Entitlement — es lo que separa Advanced de Senior y Master.</footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var LEVELS = {
+    resumen:{label:"Resumen", cls:"resumen"},
+    trainer:{label:"Trainer", cls:"trainer"},
+    junior:{label:"Junior", cls:"junior"},
+    advanced:{label:"Advanced", cls:"advanced"},
+    senior:{label:"Senior", cls:"senior"},
+    manifiesto:{label:"Manifiesto", cls:"manifiesto"},
+    practica:{label:"Práctica real", cls:"practica"},
+    master:{label:"Master", cls:"master"}
+  };
+
+  var TOPICS = [
+    {id:"resumen_trainer", level:"resumen", title:"Cómo decirlo: Trainer", front:"Repaso en una frase — Trainer.",
+     back:"<strong>POO</strong>: programar con objetos que esconden sus datos (encapsulamiento), se pueden extender (herencia), se comportan distinto según el tipo (polimorfismo) y solo muestran lo necesario (abstracción).<br><br><strong>SOLID/KISS/YAGNI/DRY</strong>: cada clase hace una sola cosa, se extiende sin modificarla, no dependo de implementaciones sino de interfaces — y no construyo nada que no necesito todavía ni repito la misma regla de negocio en dos lugares.<br><br><strong>Excepciones</strong>: las checked me obligan a manejarlas porque son recuperables; las unchecked son errores de programación. Cierro recursos con try-with-resources y nunca trago una excepción en un catch vacío.<br><br><strong>Estructuras de datos</strong>: ArrayList para leer rápido, LinkedList para insertar en los extremos, HashMap cuando no me importa el orden, TreeMap cuando sí.<br><br><strong>Arquitectura de capas</strong>: el Controller no habla con la BD — habla con el Service, y el Service con el Repository. <strong>GRASP</strong>: cada responsabilidad va donde tiene los datos para cumplirla (Experto en Información), quien usa un objeto muy de cerca lo crea (Creador), y el resto son formas de bajar acoplamiento y subir cohesión.<br><br><strong>Normalización BD</strong>: que cada dato viva en un solo lugar, y las tablas se relacionen por llaves, no por columnas repetidas."},
+    {id:"resumen_junior", level:"resumen", title:"Cómo decirlo: Junior", front:"Repaso en una frase — Junior.",
+     back:"<strong>Uso de IA</strong>: uso la IA para lo repetitivo — tests, documentación — pero las decisiones de diseño y los diagnósticos los pienso yo, porque ahí está mi criterio."},
+    {id:"resumen_advanced", level:"resumen", title:"Cómo decirlo: Advanced", front:"Repaso en una frase — Advanced.",
+     back:"<strong>Protocolos no-REST</strong>: REST es petición-respuesta sin estado; WebSocket mantiene una conexión abierta para tiempo real; gRPC es más liviano y tipado entre microservicios.<br><br><strong>Caché</strong>: Cache-Aside es la app la que gestiona la caché; Read-Through es la caché la que va a la BD cuando no tiene el dato; Write-Through escribe en los dos a la vez; Write-Behind escribe rápido y persiste después, con riesgo de perder datos si falla antes."},
+    {id:"resumen_senior", level:"resumen", title:"Cómo decirlo: Senior", front:"Repaso en una frase — Senior.",
+     back:"<strong>Clean Architecture</strong>: el dominio no depende de nada externo — las dependencias siempre apuntan hacia adentro.<br><br><strong>GoF</strong>: un patrón es una solución ya probada a un problema que se repite — sé para qué sirve cada uno, no solo el nombre.<br><br><strong>Resiliencia</strong>: si un servicio del que dependo falla, no debo tumbar el mío — corto la llamada (Circuit Breaker), reintento lo transitorio, tengo respaldo (Fallback).<br><br><strong>BDD/TDD/SDD</strong>: TDD asegura que mi código interno funcione, BDD que el comportamiento sea el que el negocio espera, SDD que la especificación esté clara antes de programar.<br><br><strong>Reactivo</strong>: no bloqueante — el hilo se libera en vez de esperar, el resultado llega después por un flujo.<br><br><strong>Funcional</strong>: funciones sin efectos secundarios que siempre devuelven lo mismo con la misma entrada — más fáciles de testear y combinar.<br><br><strong>EDA</strong>: en vez de llamar directo a otro servicio, publico un evento y el interesado lo escucha — se desacoplan sin conocerse.<br><br><strong>Teorema CAP</strong>: con partición de red, elijo entre responder rápido con un dato viejo (Availability) o negarme a responder hasta estar seguro (Consistency).<br><br><strong>Concurrencia y paralelismo</strong>: concurrencia es manejar varias tareas a la vez aunque sea en un solo núcleo; paralelismo es ejecutarlas al mismo tiempo de verdad, con varios núcleos. Un hilo comparte memoria con los demás del mismo proceso, por eso hay que sincronizar el acceso compartido.<br><br><strong>BD: índices y transacciones</strong>: un índice acelera búsquedas pero no ayuda si le aplicas una función a la columna o si la tabla es pequeña; ACID garantiza que una transacción sea todo-o-nada; a mayor nivel de aislamiento, menos concurrencia pero menos anomalías; keyset pagination es O(1), OFFSET no.<br><br><strong>AWS</strong>: EC2 es cómputo, S3 es archivos, RDS es BD relacional administrada con failover automático, DynamoDB es NoSQL por partition key, IAM es mínimo privilegio, VPC aísla la red.<br><br><strong>IaC + seguridad</strong>: la infraestructura se declara en código, se revisa antes de aplicar, y el pipeline escanea secretos y dependencias antes de producción.<br><br><strong>OWASP</strong>: los riesgos de seguridad más comunes en una app web — el que más me toca es que alguien acceda a algo que no le corresponde.<br><br><strong>DDD</strong>: el código habla el mismo idioma que el negocio, y las reglas viven dentro del modelo, no regadas en servicios sueltos."},
+    {id:"resumen_liderazgo", level:"resumen", title:"Cómo decirlo: Liderazgo", front:"Repaso en una frase — casos técnicos y de liderazgo.",
+     back:"<strong>Diagnóstico técnico</strong>: antes de proponer una solución, mido y diagnostico con evidencia — nunca adivino.<br><br><strong>Prioridad</strong>: no la decido yo por intuición, la decide el impacto. <strong>Secuencia de un incidente</strong>: primero contengo, después comunico, después investigo la causa raíz, y al final hago un postmortem sin buscar culpables.<br><br><strong>Casos de práctica</strong>: son preguntas sobre mi propio código — no las memorizo, las razono ahí mismo mirando qué decisión tomé y por qué."},
+    {id:"resumen_manifiesto", level:"resumen", title:"Cómo decirlo: Tu proyecto real", front:"Repaso en una frase — Manifiesto de programación.",
+     back:"<strong>Estructura</strong>: el proyecto se organiza por agregados de negocio, no por capa técnica genérica. <strong>CQRS</strong>: si el método retorna información es Query, si no retorna nada es Command. <strong>Command-Bus vs Event-Bus</strong>: el Command-Bus ejecuta una intención 1 a 1; el Event-Bus notifica un hecho ya ocurrido a N interesados. <strong>Trazabilidad</strong>: las excepciones de negocio están centralizadas en un enum, y el x-request-id viaja en cada petición para rastrearla de punta a punta. <strong>Estilo</strong>: nombres semánticos, una responsabilidad por función, nunca un flag argument."},
+    {id:"resumen_master", level:"resumen", title:"Cómo decirlo: Master", front:"Repaso en una frase — Master (con lo que sí y lo que no hay en Entitlement).",
+     back:"<strong>Documentación</strong>: documentamos contratos con OpenAPI y AsyncAPI y el catálogo en Backstage; ADR y C4 no existen en Entitlement, los trabajo en el reto 20 (C4 por público, ADR para el porqué).<br><br><strong>Cloud</strong>: mínimo enrutamiento, cómputo y almacenamiento, elegidos por atributo de calidad. Entitlement corre en K8s con Istio, Aurora, DynamoDB, Redis y S3; Lambda y ECS no los usamos y lo digo así.<br><br><strong>DevOps / IaC</strong>: pipeline Azure con Sonar, Jacoco, Pitest y el motor DevSecOps, y manifiestos K8s/Istio parametrizados. Terraform/CloudFormation y k6 no están en el proyecto (rendimiento es JMeter): reto 22.<br><br><strong>Seguridad</strong>: autenticación en el borde con JWT de Istio y autorización de negocio en <code>PermissionsUseCase</code>. Rate limiting no corrige un IDOR: eso se corrige verificando la propiedad del recurso.<br><br><strong>Diseño de arquitectura</strong>: microservicios por bounded context, CQRS físico con pools de lectura/escritura y RabbitMQ; de cada decisión digo el atributo ganado, el sacrificado y cómo lo mitigamos. Utility tree y ADR formales no existen: reto 24.<br><br><strong>Observabilidad</strong>: logs ECS con <code>message-id</code> propagado en el Context de Reactor y masking de datos sensibles, métricas Prometheus por Actuator, OpenTelemetry solo en Elixir. Faltan alertas por síntoma y runbooks: reto 25.<br><br><strong>Arquitectura de datos</strong>: Liquibase para la gestión, índice de depuración y TTL para la disposición, enmascaramiento en logs para la publicación. Falta una vista de publicación sin datos personales y una política de retención (reto 26), bajo la Ley 1581 de 2012."},
+    {id:"poo", level:"trainer", title:"POO", front:"Los 4 pilares de POO — nómbralos con un ejemplo cada uno.",
+     back:"<strong>Encapsulamiento</strong>: getters/setters con validación. <strong>Abstracción</strong>: interfaces/clases abstractas. <strong>Herencia</strong>: evita abusarla, prefiere composición cuando no es una relación \"es-un\". <strong>Polimorfismo</strong>: sobrescritura (mismo método, distinto tipo) o sobrecarga (mismo nombre, distintos parámetros).<br><br><strong>Genéricos acotados</strong>: <code>&lt;T extends Vehiculo&gt;</code> restringe qué tipos acepta; en runtime el compilador borra esa info (<em>type erasure</em>) — por eso no puedes hacer <code>new T()</code> ni <code>instanceof T</code>. <strong>Anotación propia</strong>: <code>@interface</code> + <code>@Retention</code> (¿vive solo en fuente o también en runtime?) + <code>@Target</code> (¿sobre qué se puede poner?). <code>@FunctionalInterface</code> valida en compilación que haya exactamente un método abstracto."},
+    {id:"solid", level:"trainer", title:"SOLID", front:"Los 5 principios SOLID, uno por letra, con un ejemplo.",
+     back:"<strong>S</strong>: una clase, una razón para cambiar. <strong>O</strong>: extensible sin modificar lo existente (Strategy nuevo = nueva clase, no editar la vieja). <strong>L</strong>: la subclase sustituye al padre sin romper el contrato. <strong>I</strong>: interfaces pequeñas y específicas. <strong>D</strong>: depende de abstracciones, no de concretos — base de la inyección de dependencias de Spring."},
+    {id:"kiss", level:"trainer", title:"KISS / YAGNI / DRY", front:"¿Qué evita cada uno?",
+     back:"<strong>KISS</strong>: complejidad innecesaria — la solución más simple que cumple. <strong>YAGNI</strong>: construir flexibilidad para un caso que no existe todavía. <strong>DRY</strong>: duplicar una <em>decisión</em> de negocio en dos lugares que puedan desincronizarse — no es solo \"no copiar código\"."},
+    {id:"excepciones", level:"trainer", title:"Excepciones", front:"Checked vs unchecked, try-with-resources, exception chaining.",
+     back:"<strong>Checked</strong> (Exception): errores recuperables, obligan throws/catch. <strong>Unchecked</strong> (RuntimeException): errores de programación, no obligan declarar. <code>try-with-resources</code> cierra cualquier AutoCloseable aunque haya excepción. Exception chaining: envolver la causa original para no perder el stacktrace real."},
+    {id:"estructuras", level:"trainer", title:"Estructuras de datos", front:"ArrayList vs LinkedList, HashMap vs TreeMap vs LinkedHashMap — ¿cuándo cada uno?",
+     back:"<strong>ArrayList</strong>: acceso O(1) — gana casi siempre por localidad de memoria. <strong>LinkedList</strong>: inserción/borrado en extremos O(1). <strong>HashMap</strong>: O(1) sin orden. <strong>LinkedHashMap</strong>: mantiene orden de inserción. <strong>TreeMap</strong>: ordenado por clave, O(log n), útil para rangos.<br><br><strong>HashSet</strong> vs <strong>TreeSet</strong>: misma lógica que HashMap/TreeMap (están respaldados por un Map internamente). Para que un objeto propio funcione en un HashMap/HashSet, <code>equals()</code> y <code>hashCode()</code> deben ser consistentes — dos objetos iguales por <code>equals()</code> DEBEN tener el mismo <code>hashCode()</code>, si no el objeto \"se pierde\" en la colección."},
+    {id:"capas", level:"trainer", title:"Capas y GRASP", front:"¿Por qué el Controller no habla directo con la BD? + los 9 patrones GRASP.",
+     back:"Mezclaría transporte HTTP, negocio y acceso a datos — un cambio de framework rompería todo. Controller → Service → Repository.<br><br><strong>Experto en Información</strong>: quien tiene los datos hace el cálculo. <strong>Creador</strong>: quien agrega o usa muy de cerca crea el objeto. <strong>Bajo Acoplamiento</strong>: minimiza dependencias entre clases. <strong>Alta Cohesión</strong>: una responsabilidad enfocada por clase. <strong>Controlador</strong>: coordina un evento sin ser la UI ni contener negocio. <strong>Polimorfismo</strong>: reemplaza condicionales por tipo con una Strategy. <strong>Fabricación Pura</strong>: una clase sin concepto de dominio, solo para cohesión (Repository, Mapper). <strong>Indirección</strong>: un intermediario desacopla dos que no deben conocerse (EventBus). <strong>Variación Protegida</strong>: encapsula el punto de cambio tras una interfaz estable — la base de Open/Closed."},
+    {id:"normalizacion", level:"trainer", title:"Normalización BD", front:"1FN, 2FN, 3FN — ¿qué elimina cada forma normal?",
+     back:"<strong>1FN</strong>: valores atómicos, sin grupos repetidos. <strong>2FN</strong>: sin dependencias parciales de una clave compuesta. <strong>3FN</strong>: sin dependencias transitivas (un atributo no-clave no depende de otro no-clave). Dependencia funcional: si conoces A, determinas B.<br><br><strong>Modelo E-R</strong>: entidades, atributos, relaciones <strong>1-1</strong>, <strong>1-N</strong> y <strong>N-M</strong> (esta última se resuelve con tabla intermedia + las dos FK). Cada tabla necesita su <strong>llave primaria (PK)</strong>; las relaciones se materializan con <strong>llaves foráneas (FK)</strong>."},
+    {id:"junior_ia", level:"junior", title:"Uso consciente de IA", front:"¿Qué te preguntan sobre cómo usas la IA en tu día a día?",
+     back:"No es un reto de código, es autovaloración. Feedback de tus evaluadores: no dejes todo el trabajo de implementación solo con la IA — hazlo a consciencia entendiendo los conceptos, que la IA potencie tu aprendizaje, no que resuelva por ti.<br><br>Ten listas: <strong>3 tareas donde SÍ usas IA</strong> (boilerplate de tests, documentación de un endpoint, un mapper repetitivo) y <strong>3 donde NO delegas</strong> (qué patrón de resiliencia aplicar, diseñar un agregado DDD, diagnosticar un bug de concurrencia) — con la razón de por qué esas sí requieren tu criterio."},
+    {id:"protocolos", level:"advanced", title:"Protocolos no-REST", front:"gRPC, WebSocket, GraphQL, AMQP — ¿cuándo cada uno y cuándo NO?",
+     back:"<strong>gRPC</strong>: interno, binario, streaming — no lo expongas a un frontend público. <strong>WebSocket</strong>: tiempo real — no para petición-respuesta simple. <strong>GraphQL</strong>: el cliente pide campos exactos — contraindicado si necesitas cacheo HTTP estándar o hay riesgo de N+1. <strong>AMQP</strong>: mensajería asíncrona desacoplada."},
+    {id:"cache", level:"advanced", title:"Caché — 4 estrategias", front:"No solo Cache-Aside: nómbralas y su trade-off.",
+     back:"<strong>Cache-Aside</strong>: la app lee/escribe en miss (ventana de inconsistencia). <strong>Read-Through</strong>: la caché sabe ir a la BD. <strong>Write-Through</strong>: escritura síncrona vía caché (consistencia fuerte, más latencia). <strong>Write-Behind</strong>: escritura async a BD (máximo rendimiento, riesgo de pérdida)."},
+    {id:"cleanarch", level:"senior", title:"Clean Architecture", front:"La regla de la dependencia — explícala con puertos y adaptadores.",
+     back:"Las dependencias apuntan hacia el dominio, nunca al revés. El dominio no conoce Spring ni la BD — define <strong>puertos</strong> (interfaces); la infraestructura los implementa (<strong>adaptadores</strong>). Así pruebas el dominio con JUnit puro y cambias de motor de BD sin tocar reglas de negocio."},
+    {id:"gof", level:"senior", title:"Patrones GoF", front:"Un ejemplo de creacional, uno estructural y uno de comportamiento.",
+     back:"<strong>Creacional — Builder</strong>: construcción paso a paso sin constructores telescópicos. <strong>Estructural — Proxy</strong>: controla acceso (los <code>@Transactional</code>/<code>@Cacheable</code> de Spring son Proxy). <strong>Comportamiento — Strategy</strong>: algoritmos intercambiables inyectados por interfaz."},
+    {id:"resiliencia", level:"senior", title:"Resiliencia", front:"Los 3 estados del Circuit Breaker + los otros 4 patrones.",
+     back:"<strong>Closed</strong> (cuenta fallas) → <strong>Open</strong> (corta de inmediato) → <strong>Half-Open</strong> (prueba con pocas peticiones). + <strong>Retry</strong> con backoff (solo fallas transitorias, cuidado con idempotencia), <strong>Fallback</strong> (respuesta alternativa), <strong>Rate Limiter</strong> (protege la entrada), <strong>Bulkhead</strong> (aísla pools de recursos por dependencia).<br><br>🏦 <strong>Ejemplo real</strong>: tu equipo despliega <code>ms_limit_create</code> con <strong>canary</strong> (liberar a un % pequeño de tráfico antes del 100%, blast radius controlado) y valida el failover de RDS de <code>masam_relationship</code> con <strong>chaos engineering en QA</strong> — tumbando la réplica a propósito para confirmar que el servicio sigue respondiendo. La resiliencia no se certifica leyendo el patrón, se certifica rompiendo el sistema a propósito."},
+    {id:"cap", level:"senior", title:"Teorema CAP", front:"En un sistema distribuido con réplicas, ¿por qué no puedes tener las 3 a la vez?",
+     back:"<strong>Consistency</strong>: todos los nodos ven el mismo dato al mismo tiempo. <strong>Availability</strong>: toda petición recibe respuesta, aunque el dato no sea el más reciente. <strong>Partition Tolerance</strong>: el sistema sigue funcionando aunque haya una partición de red.<br><br>La partición de red es inevitable en un sistema distribuido — P no es opcional. La decisión real es entre <strong>CP</strong> (prioriza consistencia, rechaza peticiones durante la partición — ZooKeeper) y <strong>AP</strong> (prioriza disponibilidad, responde con datos posiblemente viejos — Cassandra, DynamoDB eventual).<br><br>🏦 <strong>Ejemplo real</strong>: tu Entitlement Service separa el módulo de lectura (<code>r2dbc-postgresql-entitlement-read</code>) del de escritura — diseño que se inclina a AP: la réplica de lectura puede ir un poco atrás de la escritura, a cambio de no sobrecargar la instancia principal. Durante un failover de RDS esa ventana de inconsistencia se vuelve real.<br><br>Extensión que te pueden preguntar: <strong>PACELC</strong> — incluso sin partición, todo sistema distribuido elige entre Latencia y Consistencia."},
+    {id:"concurrencia", level:"senior", title:"Concurrencia, hilos y procesos", front:"Concurrencia vs paralelismo, y los 4 problemas clásicos (race condition, deadlock, livelock, starvation).",
+     back:"<strong>Proceso</strong>: memoria propia aislada, más pesado. <strong>Hilo</strong>: vive dentro de un proceso y comparte memoria con los demás — más liviano, pero expuesto a condiciones de carrera sin sincronización.<br><br><strong>Concurrencia</strong>: manejar varias tareas a la vez, aunque sea repartiendo tiempo en un solo núcleo. <strong>Paralelismo</strong>: ejecutarlas al mismo tiempo de verdad, con varios núcleos. Hay concurrencia sin paralelismo, no al revés.<br><br><strong>Race condition</strong>: el resultado depende del orden de acceso a estado compartido. <strong>Deadlock</strong>: hilos esperando mutuamente un recurso que el otro tiene. <strong>Livelock</strong>: activos pero sin avanzar. <strong>Starvation</strong>: un hilo nunca obtiene el recurso.<br><br><code>synchronized</code> (simple, bloqueo automático) vs <code>ReentrantLock</code> (más control, lo liberas tú). <code>volatile</code> da visibilidad pero NO atomicidad (no sirve para <code>contador++</code>). <code>ExecutorService</code> reutiliza hilos en vez de crear uno por tarea.<br><br>🏦 <strong>Ejemplo real</strong>: Spring MVC clásico usa un hilo por petición — un Service con estado mutable sin sincronizar se corrompe con peticiones concurrentes. Tu Entitlement Service usa <strong>WebFlux/reactivo</strong>: pocos hilos de event-loop atienden muchas peticiones sin bloquear — ahí se conectan concurrencia y programación reactiva."},
+    {id:"incidentes", level:"senior", title:"Casos técnicos y de liderazgo", front:"Una consulta a BD está lenta — ¿qué haces ANTES de proponer solución?",
+     back:"Diagnosticas con evidencia, no adivinas: <strong>1)</strong> <code>EXPLAIN ANALYZE</code> (¿sequential scan?, ¿estadísticas desactualizadas?). <strong>2)</strong> Acota el patrón (¿puntual o global?, ¿repentino o progresivo?). <strong>3)</strong> Revisa infra (locks, I/O, pool de conexiones, N+1 desde JPA). <strong>4)</strong> Mide el impacto real. Solo después propones índice, reescritura, paginación o caché.<br><br>Prioridad en un banco = severidad del impacto (Sev1–Sev4): pérdida de dinero o exposición de datos → crítico inmediato; canal caído o riesgo regulatorio (SFC) → también crítico; con workaround y alcance acotado → se gestiona sin parar todo lo demás. Incidente: contener → comunicar → diagnosticar → prevenir (postmortem sin buscar culpables) — eso es gestión de incidentes; eliminar la causa de fondo es gestión de problemas.<br><br>🏦 <strong>Tu caso real</strong>: en tu backlog de Azure DevOps tienes \"Atención de incidentes Topes y Capa de gestión — QA\" (Sprint 252) y \"Atención de incidentes Entitlement-PDN\" (Sprint 253), ambos con la misma descripción: <em>\"gestionar y dar solución a los incidentes reportados, para asegurar atención oportuna, trazabilidad y cumplimiento de los SLA\"</em>. El failover de RDS de <code>masam_relationship</code> (cerrado el 16 de sept.) es tu ejemplo de \"contener primero\": cuéntalo en ese orden, qué pasó → cómo lo contuviste → qué cambiaste después."},
+    {id:"bdd", level:"senior", title:"BDD", front:"BDD vs TDD — ¿en qué se diferencian?",
+     back:"<strong>TDD</strong>: rojo-verde-refactor a nivel de unidad, para el desarrollador. <strong>BDD</strong>: Gherkin (Given/When/Then), describe comportamiento de negocio en un lenguaje que también lee alguien no técnico. No son excluyentes: BDD con Cucumber para escenarios, TDD para el diseño interno."},
+    {id:"sdd", level:"senior", title:"TDD vs BDD vs SDD", front:"¿En qué capa opera cada uno y cómo se combinan?",
+     back:"<strong>SDD</strong> (el más reciente, 2025/26 — capa macro): la especificación detallada, acordada antes de programar, es la fuente de verdad — guía tanto al equipo como a un agente de IA que genera código. <strong>BDD</strong>: traduce esa spec en escenarios Given/When/Then verificables desde afuera. <strong>TDD</strong> (capa micro): un ejemplo que falla → mínimo código para pasar → refactor, a nivel de unidad.<br><br>🏦 <strong>Ejemplo real</strong> (revocar un rol en cascada): <strong>SDD</strong> — spec: \"al desactivar un rol, sus permisos exclusivos quedan inactivos; si un permiso viene también de otro rol activo, se mantiene\". <strong>BDD</strong> — <code>Given rol ADMIN activo sin otros roles, When se desactiva, Then sus permisos exclusivos quedan inactivos</code>. <strong>TDD</strong> — test unitario <code>debe_mantener_permiso_si_viene_de_otro_rol_activo()</code> antes de programar la lógica.<br><br>🏦 <strong>Con tu código real</strong>: <code>GroupTest.testGenerateIdGroup()</code> en tu Entitlement Service solo hace <code>assertNotNull(response)</code> — un Senior lo mejora verificando el prefijo <code>\"GPR\"</code>, la longitud exacta, el alfabeto permitido, y corriendo el generador N veces para revisar duplicados. Eso separa \"el test pasa\" de \"el test prueba algo\"."},
+    {id:"reactivo", level:"senior", title:"Programación reactiva", front:"Los 4 pilares del Manifiesto Reactivo + qué es backpressure.",
+     back:"<strong>Responsive, Resilient, Elastic, Message Driven</strong>. Backpressure: el consumidor le dice al productor cuánto puede procesar — sin esto, un productor rápido tumba a un consumidor lento por acumulación de memoria. <code>Mono</code> = 0-1 elemento, <code>Flux</code> = 0-N, todo lazy hasta <code>subscribe()</code>.<br><br><strong>Reactive Streams</strong> (la spec detrás de Reactor): <strong>Publisher</strong> (emite), <strong>Subscriber</strong> (consume), <strong>Subscription</strong> (controla la demanda), <strong>Processor</strong> (ambos roles). El backpressure es justo lo que <code>Subscription.request(n)</code> implementa."},
+    {id:"funcional", level:"senior", title:"Programación funcional", front:"Funciones puras, inmutabilidad, Streams — ¿qué problema resuelven?",
+     back:"<strong>Funciones puras</strong>: mismo input → mismo output, sin efectos secundarios (facilitan tests y paralelización). <strong>Inmutabilidad</strong>: evita bugs de estado compartido mutable. <strong>Streams</strong>: filter/map/reduce declarativo en vez de bucles con estado mutable acumulado a mano. <strong>Optional</strong>: ausencia explícita de valor, sin null.<br><br>🏦 <strong>Ejemplo real</strong>: validar una transacción componiendo reglas puras en vez de un método con ifs anidados — <code>Predicate&lt;Transaccion&gt; esValida = montoValido.and(saldoSuficiente).and(cuentaActiva);</code> Cada regla se testea sola, y agregar una cuarta no toca las demás."},
+    {id:"eda", level:"senior", title:"EDA", front:"At-least-once vs exactly-once — ¿qué debe garantizar tu consumidor?",
+     back:"<strong>At-least-once</strong> (lo normal): puede llegar el mismo mensaje 2 veces — tu consumidor debe ser <strong>idempotente</strong>. <strong>Exactly-once</strong>: más costo de coordinación, rara vez se justifica. <strong>At-most-once</strong>: se prioriza rendimiento sobre garantía — aceptable solo si perder un mensaje ocasional no es crítico. Kafka: la clave del mensaje decide la partición; el orden solo se garantiza dentro de una partición, no global.<br><br><strong>Exchanges de RabbitMQ</strong>: <strong>direct</strong> (routing key exacta), <strong>topic</strong> (patrón, ej. <code>pagos.*</code>), <strong>fanout</strong> (broadcast a todas las colas suscritas, sin filtro)."},
+    {id:"iac", level:"senior", title:"IaC + seguridad", front:"terraform plan vs apply + los 3 escaneos de seguridad en el pipeline.",
+     back:"<code>plan</code>: calcula cambios sin aplicar (tu paso de revisión). <code>apply</code>: los ejecuta. Escaneos shift-left: de <strong>secretos</strong> (credenciales hardcodeadas), de <strong>dependencias/SCA</strong> (CVEs en tu pom.xml), de <strong>contenedores</strong> (vulnerabilidades en la imagen Docker)."},
+    {id:"owasp", level:"senior", title:"OWASP Top 10 / CWE", front:"Los 10 de OWASP — nómbralos con su CWE y cómo se mitigan.",
+     back:"<strong>A01</strong> Broken Access Control (CWE-284/862): accedes a lo que no te corresponde. <strong>A02</strong> Cryptographic Failures (CWE-327): datos sensibles sin cifrar. <strong>A03</strong> Injection (CWE-89/79): entrada no sanitizada interpretada como código. <strong>A04</strong> Insecure Design: el flujo de negocio nunca contempló el abuso. <strong>A05</strong> Security Misconfiguration (CWE-16): defaults inseguros. <strong>A06</strong> Vulnerable/Outdated Components (CWE-1104): CVEs en dependencias. <strong>A07</strong> Auth Failures (CWE-287). <strong>A08</strong> Software/Data Integrity Failures (CWE-345): CI/CD sin verificación de integridad. <strong>A09</strong> Logging/Monitoring Failures (CWE-778). <strong>A10</strong> SSRF (CWE-918): el server pide a una URL que controla el atacante.<br><br><strong>SAST</strong>: código sin ejecutar, temprano en el PR. <strong>DAST</strong>: app corriendo, como atacante, más tarde en el ciclo.<br><br>🏦 <strong>Tu código real</strong>: A09 se mitiga con el x-request-id/message-id del manifiesto (trazabilidad en logs); A06 con el escaneo SCA del pipeline."},
+    {id:"bd_indices", level:"senior", title:"BD: consultas, índices y transacciones", front:"¿Cuándo un índice NO ayuda? + ACID + OFFSET vs keyset.",
+     back:"<strong>Índice B-tree</strong>: acelera búsquedas por columna(s) sin escanear toda la tabla. <strong>No ayuda</strong> si aplicas una función sobre la columna indexada (<code>WHERE UPPER(nombre)=...</code>), si la columna tiene baja selectividad (ej. un booleano), o si la tabla es pequeña — ahí un Seq Scan es más barato que ir y volver al índice. <strong>Índice compuesto</strong>: el orden de las columnas importa (sirve para prefijos de izquierda a derecha). <strong>Covering index</strong>: incluye todas las columnas del SELECT, evita tocar la tabla (Index-Only Scan).<br><br><code>EXPLAIN ANALYZE</code> te dice qué plan usó realmente el motor — Seq Scan (recorre todo), Index Scan (usa índice + va a la tabla), Index-Only Scan (no toca la tabla). <strong>N+1</strong>: 1 query para el padre + N para cada hijo en un loop — se arregla con JOIN o fetch en batch, nunca con más índices.<br><br><strong>ACID</strong>: Atomicidad (todo o nada), Consistencia (reglas del dominio se cumplen), Aislamiento (transacciones concurrentes no se pisan), Durabilidad (lo confirmado sobrevive un crash). <strong>Niveles de aislamiento</strong>: a mayor aislamiento, menos concurrencia pero menos anomalías — Read Uncommitted (dirty read), Read Committed, Repeatable Read (default razonable, evita non-repeatable read), Serializable (evita phantom read, más lento).<br><br><strong>Paginación</strong>: OFFSET/LIMIT es simple pero en páginas altas igual recorre y descarta las filas saltadas — O(n). Keyset (<code>WHERE id > último_id LIMIT n</code>) es O(1) sin importar la página.<br><br>🏦 <strong>Ejemplo real</strong>: el <code>Repository&lt;T, ID&gt;</code> genérico de tu Entitlement Service abstrae el acceso, pero el índice correcto lo decides tú mirando el <code>WHERE</code> real de las queries que genera — el patrón no reemplaza el análisis del plan de ejecución."},
+    {id:"aws", level:"senior", title:"AWS — servicios que debes dominar", front:"EC2, S3, RDS, DynamoDB, IAM, VPC, CloudWatch — ¿qué es cada uno en una frase?",
+     back:"<strong>EC2</strong>: servidor virtual, la unidad de cómputo básica. <strong>S3</strong>: almacenamiento de objetos (archivos, no relacional) — durable y barato. <strong>RDS</strong>: BD relacional administrada (Postgres/MySQL) con <strong>Multi-AZ</strong> — una réplica en otra zona de disponibilidad que asume el failover automático si la principal cae. <strong>DynamoDB</strong>: NoSQL administrada, escala por <strong>partition key</strong> — el diseño de esa key define qué tan bien se distribuye la carga. <strong>IAM</strong>: quién puede hacer qué, con el principio de <strong>mínimo privilegio</strong> — roles y políticas, nunca credenciales hardcodeadas. <strong>VPC</strong>: red aislada con subnets públicas (con salida a internet) y privadas (sin salida directa), más security groups como firewall por instancia. <strong>CloudWatch</strong>: logs, métricas y alarmas — la base de la observabilidad.<br><br>🏦 <strong>Ejemplo real</strong>: tu Entitlement Service tiene los módulos <code>bucket-s3</code> (almacenamiento de archivos) y <code>dynamo-db</code> (datos de alta escritura/lectura), y <code>masam_relationship</code> corre en RDS — el failover Multi-AZ que atendiste (cerrado 16 de sept.) es la prueba en vivo de por qué RDS administrado vale la pena: el failover pasó sin que tú tuvieras que promover una réplica a mano."},
+    {id:"ddd", level:"senior", title:"DDD", front:"Lenguaje ubicuo, Bounded Context, Agregado, Value Object, Domain Event.",
+     back:"<strong>Lenguaje ubicuo</strong>: mismo término en negocio y código. <strong>Bounded Context</strong>: límite donde un modelo es válido. <strong>Agregado</strong>: unidad transaccional con una raíz que garantiza invariantes. <strong>Value Object</strong>: sin identidad, inmutable. <strong>Domain Event</strong>: algo que pasó y le importa a otros — puente con EDA.<br><br>🏦 <strong>Ejemplo real</strong> (Entitlement Service): <code>Group</code> es el agregado con <code>generateIdGroup()</code>; <code>DocumentNumber</code> y <code>XRequestId</code> son Value Objects tipados (extienden <code>AbstractString</code>/<code>AbstractUUID</code> en vez de <code>String</code> suelto); <code>ProductGroupModifyEvent extends DomainEvent&lt;EventData&gt;</code> es un Domain Event real con su propio routing key. Y <code>AuthorizationRelationship.isTitularRole()</code> es lógica de negocio viviendo en el modelo, no en un controller.<br><br><strong>Entidad vs Value Object</strong> (contraste completo): una Entidad tiene identidad propia — igualdad por id, no por atributos. Un VO no tiene id: dos instancias con los mismos valores SON el mismo objeto. <strong>Repositorio</strong>: abstracción de persistencia a nivel de agregado completo, nunca a nivel de tabla. <strong>Modelo rico vs anémico</strong>: rico = la lógica vive en las entidades (<code>pedido.confirmar()</code>); anémico = solo getters/setters y toda la lógica en Services — el antipatrón más común al decir \"hacer DDD\" sin hacerlo."},
+    {id:"manifiesto_carpetas", level:"manifiesto", title:"Estructura de carpetas", front:"¿Cómo se organiza la estructura global de carpetas de tu proyecto?",
+     back:"Por <strong>agregados principales</strong> del negocio (ej. \"ticket\"), repetido en domain/application/infra. Dominio: <strong>model</strong> (gateway/model/value bajo \"main\") y <strong>usecase</strong> (segmentado por <strong>management</strong>/<strong>info</strong> — transformar vs consultar). <strong>shared</strong> para lo usado por varios contextos. Sub-casos de uso se anidan dentro del caso base — este siempre orquesta, nunca delega la orquestación."},
+    {id:"manifiesto_cqrs", level:"manifiesto", title:"CQRS: Command vs Query", front:"¿Cuándo usas Command y cuándo Query en tu proyecto?",
+     back:"Si el método <strong>retorna información</strong> → <strong>Query</strong>. Si no retorna nada → <strong>Command</strong> (nunca retorna valor, Void/Mono&lt;Void&gt;). Ambas cargan <strong>Payload</strong> + <strong>Context</strong> (ContextData: messageId + xRequestId, inmutable desde el inicio de la petición). Convertir entre las dos: clase <strong>Mapper</strong>."},
+    {id:"manifiesto_bus", level:"manifiesto", title:"Command-Bus vs Event-Bus", front:"La tabla comparativa — relación, retorno, anotación del handler.",
+     back:"<strong>Command-Bus</strong>: ejecuta una intención, 1:1, <code>@CommandHandlerService</code> + <code>execute()</code>. <strong>Event-Bus</strong>: notifica un hecho ya ocurrido, 1:N, <code>@EventHandlerService</code> + <code>handler()</code>. Agregar un handler nuevo al Event-Bus son 3 pasos sin tocar código existente — Open/Closed en la práctica."},
+    {id:"manifiesto_excepciones", level:"manifiesto", title:"Excepciones y trazabilidad", front:"¿Dónde se centralizan las excepciones y cómo viaja el x-request-id?",
+     back:"Enum <code>ConstantBusinessException</code> (status, message, errorCode, internalMessage, logCode) + <code>GlobalExceptionHandler</code> centralizado. Nunca retornar null — <code>Optional</code> o excepción. <strong>x-request-id</strong> en la respuesta: si llegó en la petición se reusa, si no llegó se carga con el <strong>message-id</strong>."},
+    {id:"practica_id", level:"practica", title:"¿Es un problema no validar colisión de ids?", front:"Group.generateIdGroup() usa SecureRandom y no valida colisión — ¿problema?",
+     back:"Con 16 caracteres alfanuméricos la probabilidad de colisión es despreciable, pero en entrevista se espera que lo reconozcas como <strong>decisión consciente</strong> (no omisión) y menciones la red de seguridad real: un <strong>constraint UNIQUE en BD</strong>."},
+    {id:"practica_test", level:"practica", title:"¿Ese test te deja tranquilo?", front:"GroupTest solo hace assertNotNull sobre el id generado — ¿suficiente?",
+     back:"No: prueba que \"hay algo\", no que \"es correcto\". Un test Senior verificaría el prefijo <code>GPR</code>, la longitud exacta, el alfabeto permitido, y correría el generador N veces para revisar duplicados."},
+    {id:"practica_authz", level:"practica", title:"¿Cómo se protege el rol de titular?", front:"¿Cómo evita AuthorizationRelationship que alguien sin el rol correcto actúe como titular?",
+     back:"<code>isTitularRole()</code> compara <code>nameRole</code>/<code>codeRole</code> contra listas de constantes — la verificación vive en el <strong>modelo de dominio</strong>, no en el controller ni en un filtro aparte, así que no se puede \"saltar\" llamando el caso de uso desde otro entry point. A01 bien mitigado."},
+    {id:"practica_evento", level:"practica", title:"Un evento no llegó a su consumidor", front:"ProductGroupModifyEvent no llegó a su consumidor — ¿cómo lo investigas?",
+     back:"Con el <strong>x-request-id</strong>/<strong>message-id</strong> del manifiesto rastreas el mensaje en los logs de punta a punta (A09 Logging/Monitoring). Si el consumidor es <strong>idempotente</strong>, reprocesar el evento (replay) no genera efectos duplicados."},
+    {id:"practica_lider_pr", level:"practica", title:"Liderazgo: un PR con test débil en main", front:"Encuentras un PR con un test tan débil como GroupTest ya en main — ¿qué haces?",
+     back:"No es señalar culpables: es hablar del <strong>estándar del equipo</strong> (100% de cobertura en dominio no es lo mismo que calidad de test) y fortalecerlo en el siguiente PR como ejemplo, no como corrección pública."},
+    {id:"practica_lider_prioridad", level:"practica", title:"Liderazgo: incidente vs. tarea planeada", front:"Incidente de Entitlement-PDN abierto + te piden revisar el failover de masam_relationship — ¿qué priorizas?",
+     back:"Producción con incidente activo gana siempre sobre trabajo planeado: <strong>contener → comunicar → diagnosticar</strong> no espera; el failover sí puede esperar unas horas."},
+    {id:"manifiesto_estilo", level:"manifiesto", title:"Estilo de programación", front:"Las reglas duras para funciones: argumentos, returns, flag arguments.",
+     back:"Máximo <strong>4 argumentos</strong> (más → usa un objeto), máximo <strong>2-3 return</strong> por función, nunca <strong>flag arguments</strong> (booleano que cambia el comportamiento = la función hace más de una cosa), getters booleanos con <code>is</code>/<code>has</code>. <code>execute</code> es exclusivo del caso de uso principal; <code>handler</code> es de los Event Handlers."}
+  ];
+
+  var MASTER_TOPICS = [{"id": "master_20", "level": "master", "title": "Documentación", "front": "C4, 4+1 y ADR — ¿qué vista usas para cada público y qué registra un ADR?", "back": "<p>Una vista de arquitectura es un recorte del sistema pensado para un público y una pregunta concreta. C4 (Simon Brown) lo ordena en cuatro niveles de zoom: Contexto (el sistema como una caja, sus usuarios y los sistemas vecinos; lo entiende cualquiera), Contenedores (las unidades desplegables o que guardan datos: aplicación, base de datos, broker; para quien construye y opera), Componentes (las piezas internas de un contenedor: controladores, casos de uso, adaptadores; para desarrolladores) y Código (clases, casi siempre opcional porque el IDE lo genera). El modelo 4+1 de Kruchten es la alternativa: vistas lógica, de procesos, de desarrollo y física (despliegue), unidas por una vista de escenarios (casos de uso) que las valida. No hay que usar las dos; hay que escoger una y ser consistente.</p><p>Un ADR (Architecture Decision Record, Nygard) registra una decisión, no una descripción: qué contexto había, qué se decidió, qué alternativas se descartaron y qué consecuencias (buenas y malas) se aceptaron. Su valor es que dentro de un año alguien entienda por qué se hizo así sin tener que preguntarle a quien ya no está. Los diagramas de secuencia muestran el orden de las interacciones, los de clases la estructura estática del dominio y el entidad-relación los datos persistidos; cada uno responde una pregunta distinta, no son intercambiables.</p><p>Self-documenting code es la práctica complementaria: antes de escribir un comentario o un diagrama para explicar una clase, intentas que los nombres y la estructura lo expliquen solos. Un comentario que dice \"suma el IVA\" sobre <code>total = x * 1.19</code> se reemplaza por <code>precioConIva(precio)</code>. No elimina la documentación de arquitectura (el código no cuenta por qué se eligió Kafka), pero sí la de bajo nivel.</p><p>Cuándo NO: un diagrama de cada clase \"por si acaso\" (se desactualiza el mismo día), un ADR por cada decisión trivial (diluye los importantes) o un documento de 40 páginas que nadie abre. La regla práctica: documenta lo que es caro de redescubrir.</p><hr class=\"sep\"><p class=\"lbl\">🧩 <strong>Ejemplo fácil</strong></p><p>Un mapa sirve a distintas personas con distinto zoom: el país (C4 nivel 1, contexto), la ciudad (nivel 2, contenedores), la calle (nivel 3, componentes) y la casa (nivel 4, código). Y un ADR es el acta de <strong>por qué</strong> se eligió ese camino:</p><pre><code># ADR-0001: Usar RabbitMQ para notificar recordatorios\nContexto → Decisión → Alternativas (Kafka, SQS) → Consecuencias (+desacople, -consistencia eventual)</code></pre><p>Cuándo NO: no documentes lo que el código ya dice solo; documenta decisiones y fronteras.</p><p class=\"lbl\">🏦 <strong>Cómo lo trabajamos en Entitlement</strong></p><ul><li><strong>Contratos de API:</strong> OpenAPI 3.1 en <code>ms_actors/deployment/ApiDoc/entitlement_service_actors-documentacion.yml</code>, <code>ms_entitlement/resources/api-doc/…documentation.yaml</code>, <code>permitions_entitlement_ms/API-definition.yaml</code>, <code>ms_limit_clone_*/deployment/ApiDoc/specification/*.yaml</code>.</li><li><strong>Contratos de eventos:</strong> AsyncAPI en <code>ms_actors/deployment/ApiDoc/{External_Events,Internal_Events}</code>.</li><li><strong>Catálogo:</strong> <code>catalog-info.yaml</code> (Backstage) en cada micro con <code>sonarqube.org/project-key</code>; <code>mkdocs.yml</code> (techdocs) existe pero con contenido de plantilla sin editar.</li><li><strong>Diagramas:</strong> <code>Library_MR/ecs_logs/docs/</code> (componentes + 2 de secuencia), capturas ER en <code>bd/*.png</code>. (El pipeline cita un <code>Arquitectura.png</code> en <code>sonar.exclusions</code>, pero ese archivo no está en el árbol revisado: confírmalo antes de mencionarlo.)</li><li><strong>Documentación de reglas del equipo:</strong> la skill <code>java-code-review</code> (<code>Library_MR/cursor-sources</code>) describe estructura y principios.</li><li><strong>README:</strong> la mayoría son plantilla del scaffold (checklist de HPA, pools, tolerancia a fallos); <code>Library_MR/ecs_logs/README.md</code> es la excepción con módulos y diagramas.</li><li><strong>Incidentes:</strong> <code>incidentes/</code> son volcados de logs/consultas, sin estructura de postmortem.</li></ul><p class=\"lbl\">⚠️ <strong>No encontrado en los micros</strong></p><ul><li>ADR, C4 y diagramas de código (PlantUML/Mermaid): NO ENCONTRADO. Es tu brecha más clara: el reto 20 la cierra.</li></ul><p><strong>Cómo contarlo:</strong> \"Documentamos contratos (OpenAPI/AsyncAPI) y catálogo (Backstage); lo que faltaba eran ADR y C4, que son lo que trabajo en el reto 20\".</p>"}, {"id": "master_21", "level": "master", "title": "Cloud — infraestructura", "front": "Infraestructura mínima en la nube — ¿qué tres piezas necesitas y cómo eliges Lambda vs ECS vs EC2?", "back": "<p>Una solución en la nube casi siempre se descompone en tres preguntas: quién recibe el tráfico, quién ejecuta la lógica y dónde viven los datos. El enrutamiento (API Gateway, Application Load Balancer) es el punto de entrada: termina TLS, aplica autenticación y límites de tasa y reparte la carga, de modo que el cómputo no queda expuesto a internet. El cómputo se escoge por patrón de uso: Lambda cobra por ejecución y escala a cero (bueno para tráfico irregular o poco predecible, malo para procesos largos o con arranque en frío sensible); ECS/Fargate corre contenedores sin administrar servidores (bueno para servicios Spring Boot que ya tienes empaquetados y tráfico estable); EC2 da control total del sistema operativo a cambio de operar parches, escalado y capacidad. El almacenamiento también se decide por el acceso: DynamoDB para acceso por clave con latencia baja y escala casi ilimitada, RDS/Aurora cuando necesitas consultas relacionales y transacciones, S3 para objetos y archivos.</p><p>Cada elección es un trade-off con atributos de calidad: serverless favorece costo y escalabilidad elástica pero complica el control de latencia; contenedores favorecen portabilidad; una base relacional favorece consistencia y consultas ad hoc pero escala diferente. Lo que te evalúan no es que recuerdes los servicios sino que puedas decir qué sacrificaste.</p><p>Cuándo NO complicarlo: si el servicio recibe 50 solicitudes al día, Lambda más DynamoDB cuesta centavos y un clúster ECS sería sobreingeniería; si necesitas transacciones multi-tabla, DynamoDB probablemente no es la opción. Y todo esto se declara como código (reto 17 y 22), no se crea a mano en la consola.</p><hr class=\"sep\"><p class=\"lbl\">🧩 <strong>Ejemplo fácil</strong></p><p>Lo mínimo de una solución en la nube: una <strong>puerta</strong> (enrutamiento: API Gateway/ALB), un <strong>cerebro</strong> (cómputo: Lambda, ECS o EC2) y una <strong>bodega</strong> (almacenamiento: S3, DynamoDB o RDS).</p><pre><code>Cliente → API Gateway → Lambda → DynamoDB</code></pre><p>Lambda si es esporádico y corto; ECS/contenedores si hay tráfico constante; EC2 si necesitas control total. DynamoDB para acceso por clave a escala; RDS cuando necesitas joins y transacciones.</p><p class=\"lbl\">🏦 <strong>Cómo lo trabajamos en Entitlement</strong></p><ul><li><strong>Cómputo:</strong> contenedores en Kubernetes con malla Istio (<code>sidecar.istio.io/inject</code>, HPA por CPU/memoria, PDB, canary con <code>DestinationRule</code>); imagen Java 21 Alpine con usuario no root (<code>ms_actors/deployment/Dockerfile</code>). <strong>Lambda, ECS, EC2 y API Gateway: NO ENCONTRADO.</strong></li><li><strong>Datos:</strong> Aurora PostgreSQL con pools separados lectura/escritura (<code>r2dbc-core-read/write</code>, <code>r2dbc-transactions-read/write</code>; <code>AuroraConnectionRoleValidator</code> espera <code>WRITER</code>), DynamoDB (event sourcing, eventos fallidos, <code>roleCapabilityTable</code>), ElastiCache Redis (host y <code>hostread</code>).</li><li><strong>Almacenamiento de objetos:</strong> S3 en <code>ms_products</code> (<code>bucket-s3</code>: <code>VerifyExecuteGroupS3FileService</code>, <code>S3AsyncClientConfig</code>) y URLs prefirmadas en <code>permitions_entitlement_ms</code> (<code>S3PresignedConfig</code>).</li><li><strong>Procesos pesados:</strong> AWS Batch (<code>AwsBatchService</code>: <code>SubmitJobRequest</code> con <code>jobQueue</code>/<code>jobDefinition</code>) y Glue ETL (<code>GenerateReportService</code>) para el reporte analítico.</li><li><strong>Configuración y secretos:</strong> SSM Parameter Store y Secrets Manager.</li><li><strong>Justificación por atributos de calidad:</strong> lecturas por réplica y Redis (latencia), HPA/PDB/canary (disponibilidad), Batch para no bloquear al micro (rendimiento).</li></ul><p class=\"lbl\">⚠️ <strong>No encontrado en los micros</strong></p><ul><li>Lambda / ECS / EC2 / API Gateway no se usan en estos micros. La comparación Lambda vs ECS vs EC2 la defiendes con criterios, y con el reto 21 como práctica.</li></ul><p><strong>Cómo contarlo:</strong> \"Nuestro cómputo son contenedores sobre K8s, el dato está en Aurora + DynamoDB + Redis y lo pesado va a Batch/Glue\", y por qué cada uno por su atributo de calidad.</p>"}, {"id": "master_22", "level": "master", "title": "DevOps / IaC", "front": "IaC con dos herramientas, zero trust, pruebas de rendimiento con umbrales e IA en DevSecOps — ¿qué defiendes?", "back": "<p>Zero trust (NIST SP 800-207) parte de dos ideas: nunca confiar por estar \"dentro de la red\" y verificar explícitamente cada acceso con el mínimo privilegio, asumiendo que alguna credencial o componente ya está comprometido. Llevado a infraestructura como código significa que esas reglas son archivos revisables y comprobables: nada es público por defecto, cada función tiene su propio rol, todo se cifra, cada llamada se autentica y autoriza, y el pipeline rechaza un cambio que las viole. Eso se llama policy as code: tfsec, checkov, cfn-lint o cfn_nag convierten una norma en una prueba automática.</p><p>Tener dos herramientas de IaC demuestra que entiendes el concepto y no solo la sintaxis. Terraform es multinube, declarativo (HCL) y guarda estado propio; CloudFormation es nativo de AWS, sin estado que administrar y con integración inmediata a nuevos servicios; CDK escribe lo mismo en un lenguaje de programación y por debajo genera CloudFormation; SAM es una extensión de CloudFormation para serverless. La decisión depende del equipo, de si hay más de una nube y de dónde vive el estado.</p><p>Una prueba de rendimiento (k6, Gatling, JMeter) mide latencia y errores bajo carga. Metida al pipeline con umbrales, convierte un requisito no funcional (\"p95 menor a 500 ms\") en una condición de aceptación que se verifica en cada cambio, en vez de descubrirse en producción.</p><p>La IA en DevSecOps sirve para lo que el humano hace mal por volumen: leer cientos de hallazgos, agruparlos, explicarlos y proponer prioridad. No debería: ver secretos o datos reales (se redactan antes), aprobar un despliegue, ni cerrar un hallazgo por sí sola. El criterio es el mismo de tu reto 8: la IA propone, tú decides y puedes explicar por qué.</p><p>Cuándo NO: no tiene sentido tener dos herramientas de IaC en un proyecto pequeño solo por tenerlas (aquí lo haces para demostrar el criterio, en un proyecto real escogerías una); y una prueba de carga contra un entorno compartido sin avisar puede tumbarlo.</p><hr class=\"sep\"><p class=\"lbl\">🧩 <strong>Ejemplo fácil</strong></p><p>Pipeline = una banda transportadora: cada commit pasa por compilar → pruebas → análisis de calidad → seguridad → artefacto, y si una estación falla, la banda se detiene. Las pruebas de rendimiento definen <strong>umbrales</strong> (por ejemplo p95 &lt; 300 ms) y fallan si no se cumplen.</p><pre><code>export const options = { thresholds: { http_req_duration: ['p(95)&lt;300'] } };  // k6</code></pre><p>Cuándo NO: no metas una prueba de carga de 20 minutos en cada commit; córrela en una etapa o nocturna.</p><p class=\"lbl\">🏦 <strong>Cómo lo trabajamos en Entitlement</strong></p><ul><li><strong>Pipeline por micro</strong> (monorepo con triggers por <code>paths</code>): <code>deployment/azure_build.yaml</code> (Java), <code>ms_retrieve_role/resources/pipeline/azure-pipelines.yaml</code> (Elixir), <code>ms_masam_front/azure-pipeline.yaml</code> (Angular). Etapa <code>CI</code>, job <code>build</code>, JDK 21: <code>SonarQubePrepare</code> → <code>Gradle clean build jacocoMergedReport</code> → reporte Pitest → <code>PublishCodeCoverageResults</code>; en <code>trunk</code> empaqueta jar, Dockerfile, k8s, <code>AcceptanceTest</code> y <code>PerformanceTest</code>.</li><li><strong>Calidad:</strong> Sonar con exclusiones, Jacoco, Pitest (mutation testing); <code>Sonar-buildbreaker</code> (rompe el build si falla el quality gate) en <code>ms_retrieve_role</code> y <code>ms_masam_front</code>; Elixir con <code>credo</code> + <code>sobelow</code> (SAST) enviados a Sonar.</li><li><strong>Seguridad:</strong> job <code>Task_DevSecops</code> (<code>devsecops-engine@1</code>, <code>useVulnerabilityManagement: true</code>, config remota).</li><li><strong>Rendimiento:</strong> JMeter por micro (<code>deployment/performance-test/Jmeter</code>, <code>SC_EntitlementMsRetrieveRole.jmx</code>, <code>EntitlementRoles.jmx</code>); varios son plantilla del scaffold.</li><li><strong>Base de datos:</strong> pipeline Liquibase Pro por contextos de ambiente.</li><li><strong>Despliegue (CD):</strong> no está en estos pipelines; publican artefactos y un release externo despliega.</li><li><strong>Zero trust (lo más cercano):</strong> <code>AuthorizationPolicy</code> de Istio con identidad JWT por scope/método/path y <code>ALLOW</code> explícito: \"nunca confiar, siempre verificar\", aunque no está escrito como <em>policy as code</em> con OPA/Conftest.</li></ul><p class=\"lbl\">⚠️ <strong>No encontrado en los micros</strong></p><ul><li>k6, Gatling, CloudFormation/CDK y policy-as-code con OPA: NO ENCONTRADO. IA en el pipeline: solo la skill de revisión (tema 8).</li></ul><p><strong>Cómo contarlo:</strong> Pipeline de calidad con Sonar + Pitest + DevSecOps como lo real; k6, CloudFormation y el triage con IA son el reto 22.</p>"}, {"id": "master_23", "level": "master", "title": "Seguridad en la arquitectura", "front": "Tácticas de seguridad en la arquitectura — resistir, detectar, reaccionar, recuperarse + STRIDE.", "back": "<p>Una táctica de seguridad es una decisión de diseño que influye en la capacidad del sistema de enfrentar un ataque. El catálogo clásico (Bass, Clements y Kazman) las agrupa en cuatro categorías según el momento: resistir ataques (autenticar, autorizar, limitar acceso y exposición, cifrar, validar entrada, separar entidades), detectar ataques (detectar intrusión o denegación de servicio, verificar integridad de mensajes), reaccionar a ataques (revocar acceso, bloquear, notificar) y recuperarse (restaurar y mantener pistas de auditoría que den no repudio). Una arquitectura robusta combina categorías: resistir reduce la superficie, detectar te avisa cuando resistir no bastó, reaccionar contiene el daño.</p><p>STRIDE es la forma de decidir qué táctica necesitas: Spoofing (suplantación), Tampering (manipulación), Repudiation (repudio), Information disclosure (divulgación), Denial of service y Elevation of privilege. El IDOR del reto 18 es divulgación de información por elevación de privilegio horizontal; la autorización por dueño lo resuelve en la raíz, pero la enumeración masiva (probar los ids 1 a 1000) sigue siendo una señal de ataque que quieres limitar y ver. Por eso el rate limiting no corrige el IDOR: reduce lo rápido que se puede explotar y te da tiempo, no arregla la falla.</p><p>Cuándo NO: limitar la tasa de forma muy agresiva rompe a usuarios legítimos (una aplicación móvil que reintenta); registrar en el log el contenido de los documentos para auditar crea un problema nuevo de privacidad (se audita quién y qué recurso, no el contenido); y una alerta que se dispara diez veces al día se ignora.</p><hr class=\"sep\"><p class=\"lbl\">🧩 <strong>Ejemplo fácil</strong></p><p>Las tácticas de seguridad se agrupan en cuatro verbos: <strong>resistir</strong> (cerradura), <strong>detectar</strong> (alarma), <strong>reaccionar</strong> (guardia) y <strong>recuperarse</strong> (copia de llaves). STRIDE es la lista de qué puede salir mal: Suplantar, Manipular, Repudiar, Revelar info, Denegar servicio, Elevar privilegios.</p><pre><code>Ataque: enumerar /documentos/1..N  → resistir: chequeo de dueño (IDOR); detectar: alerta por muchos 403; reaccionar: bloquear; recuperar: auditar y rotar</code></pre><p>Rate limiting no corrige un IDOR: solo hace más lento al atacante.</p><p class=\"lbl\">🏦 <strong>Cómo lo trabajamos en Entitlement</strong></p><ul><li><strong>Resistir:</strong> JWT y <code>AuthorizationPolicy</code> en Istio (identidad, scope, método, path); autorización de negocio en <code>PermissionsUseCase</code>; HSTS y <code>nosniff</code> (<code>SecurityHeadersConfig</code>); secretos en Secrets Manager; validación con value objects.</li><li><strong>Rate limiting:</strong> solo en <code>InternalServices_MR/internal_information_ms/deployment/k8s/local_rate_limit.yaml</code> (<code>EnvoyFilter</code> <code>local_ratelimit</code>, token bucket por <code>allowed-tps</code>). En los demás micros: NO ENCONTRADO.</li><li><strong>Detectar:</strong> logs funcionales (<code>transversal-log-v3</code>), <code>LogAuthorization</code> en <code>PermissionsUseCase</code>, <code>message-id</code>/<code>x-request-id</code>/<code>aidCreator</code> en <code>ContextData</code>, tabla de eventos en DynamoDB.</li><li><strong>Datos sensibles en logs:</strong> <code>SensitiveHelper</code> (<code>Library_MR/ecs_logs/ecs-core</code>) con estrategias <code>FULL</code>, <code>PARTIAL</code>, <code>CUSTOM</code>, <code>REMOVE</code>; en el configmap, patrones/campos/headers permitidos y muestreo de 2xx/4xx.</li><li><strong>Recuperar:</strong> réplicas HPA, PDB, canary, DLQ de eventos y <code>FailedEventsAdapter</code>.</li><li><strong>Contra-evidencia:</strong> <code>mTLS</code> explícito (<code>PeerAuthentication</code>/<code>ISTIO_MUTUAL</code>): NO ENCONTRADO; cifrado en reposo/KMS: NO ENCONTRADO; en Elixir <code>authorization_controller.ex</code> registra el cuerpo del request (verificar que no incluya datos sensibles); <code>verify_none</code> en la conexión a Postgres de <code>ms_retrieve_role</code>.</li></ul><p class=\"lbl\">⚠️ <strong>No encontrado en los micros</strong></p><ul><li>mTLS explícito, KMS y WAF: NO ENCONTRADO en este código.</li></ul><p><strong>Cómo contarlo:</strong> Mapea 4 verbos con ejemplos reales (JWT/Istio, logs con <code>message-id</code>, DLQ/canary) y menciona los 2 hallazgos como mejora propuesta.</p>"}, {"id": "master_24", "level": "master", "title": "Diseño de arquitectura", "front": "Diseño por atributos de calidad — utility tree, escenarios, ATAM ligero y fitness functions.", "back": "<p>Los atributos de calidad (rendimiento, disponibilidad, seguridad, modificabilidad, escalabilidad, costo, operabilidad...) son los requisitos no funcionales que realmente moldean una arquitectura: la funcionalidad casi cualquier arquitectura la puede entregar, la calidad no. El primer paso es priorizarlos con el negocio, porque no se puede maximizar todo a la vez; un árbol de utilidad ordena cada atributo en escenarios concretos con importancia para el negocio y dificultad técnica.</p><p>Un escenario de calidad hace el requisito medible. En lugar de \"debe ser rápido\" se escribe: fuente (un paciente), estímulo (500 reservas por segundo un lunes a las 7 a. m.), artefacto (la API de citas), entorno (operación normal con pico), respuesta (cada reserva se confirma) y medida (p95 menor a 800 ms y menos de 0,5% de errores). Lo medible permite probar y discutir.</p><p>ATAM (Architecture Tradeoff Analysis Method) evalúa una arquitectura contra esos escenarios y busca tres cosas: puntos de sensibilidad (una decisión de la que depende mucho un atributo), trade-offs (una decisión que mejora un atributo y empeora otro) y riesgos. Por ejemplo, microservicios mejoran la modificabilidad independiente y la escalabilidad por componente, pero empeoran la complejidad operativa y la consistencia; un monolito modular hexagonal mantiene la consistencia simple y puede extraer un módulo después si un dato lo justifica.</p><p>Una fitness function (arquitectura evolutiva) es una prueba automática que protege un atributo a lo largo del tiempo: un test ArchUnit que impide que el dominio dependa de Spring protege la modificabilidad; una prueba de carga con umbral protege el rendimiento. Sin ellas, la arquitectura se degrada sin que nadie lo note.</p><p>Cuándo NO: no escojas microservicios porque \"es lo moderno\" con un equipo de seis personas y sin necesidad real de escalar partes por separado; el costo operativo se come el beneficio. Y no escribas veinte escenarios: con tres bien medidos se decide más que con veinte vagos.</p><hr class=\"sep\"><p class=\"lbl\">🧩 <strong>Ejemplo fácil</strong></p><p>Diseñar arquitectura es elegir qué sacrificas. Cada atributo de calidad (latencia, disponibilidad, seguridad, costo) se escribe como un escenario medible: <em>\"Si llegan 500 consultas/s de permisos, p95 &lt; 200 ms\"</em>. Un <em>utility tree</em> ordena cuáles importan más y cada decisión se contrasta con un trade-off. Una <em>fitness function</em> es un test que vigila que la arquitectura no se degrade (por ejemplo, que el dominio no importe infraestructura).</p><p>Monolito modular vs microservicios: el segundo ganó independencia de despliegue a cambio de operación y consistencia más difíciles.</p><p class=\"lbl\">🏦 <strong>Cómo lo trabajamos en Entitlement</strong></p><ul><li><strong>Microservicios por bounded context</strong>, un repo por contexto (<code>NU&lt;código&gt;_&lt;Dominio&gt;_MR</code>): <code>Entitlement_Service</code>, <code>Monetary_Transactions</code>, <code>Monetary_Limits</code> (nueve <code>ms_limit_*</code>), <code>Entitlement_MASAM</code>, más <code>InternalServices</code>, <code>EntitlementAnalitica</code>, <code>Library</code>.</li><li><strong>CQRS físico (lectura/escritura):</strong> pools R2DBC separados <code>core-read/core-write</code> y <code>transactions-read/transactions-write</code>; en Elixir <code>RepoRead</code> (<code>read_only: true</code>) y <code>RepoWrite</code>; <code>ms_query_transactions</code> (consulta) vs <code>ms_admin_entitlement_trx</code> (administración); Redis con réplica de lectura. Atributo: <strong>rendimiento y escalabilidad de lectura</strong>.</li><li><strong>Event-driven con RabbitMQ y event sourcing</strong> para desacoplar contextos. Atributo: <strong>desacoplamiento y disponibilidad</strong>; costo: consistencia eventual.</li><li><strong>Caché multinivel</strong> (Caffeine + Redis). Atributo: <strong>latencia</strong>.</li><li><strong>Políglota:</strong> Elixir para consultas de baja latencia (<code>ms_retrieve_role</code>), Java/WebFlux para el resto.</li><li><strong>Tácticas de disponibilidad:</strong> HPA, PDB, probes, canary; trabajo pesado a AWS Batch/Glue.</li><li><strong>Fitness functions reales:</strong> <code>ArchitectureTest</code> (ArchUnit) y <code>validateStructure</code> del scaffold; calidad con Sonar quality gate y Pitest.</li><li><strong>Atributos de calidad escritos:</strong> solo en la plantilla del README (escalabilidad, performance, tolerancia a fallos, seguridad); no hay utility tree ni ADR.</li></ul><p class=\"lbl\">⚠️ <strong>No encontrado en los micros</strong></p><ul><li>Utility tree, escenarios de calidad y ADR propios: NO ENCONTRADO. El reto 24 es hacerlos sobre Entitlement.</li></ul><p><strong>Cómo contarlo:</strong> Elige 2 decisiones (CQRS físico y RabbitMQ) y para cada una di atributo ganado, atributo sacrificado y cómo lo mitigan. Eso es lo que significa \"trade-off\".</p>"}, {"id": "master_25", "level": "master", "title": "Observabilidad", "front": "Observabilidad — métricas, logs y trazas; RED/USE; alertas por síntoma con runbook.", "back": "<p>Observabilidad es la capacidad de entender el estado interno de un sistema a partir de lo que emite. Se apoya en tres señales: métricas (números agregados en el tiempo; baratas, buenas para alertar y ver tendencias), logs (eventos con contexto; caros, buenos para investigar un caso) y trazas (el recorrido de una solicitud a través de componentes, con el tiempo de cada tramo; buenas para ubicar dónde se pierde el tiempo). Se correlacionan mediante identificadores compartidos: un <code>correlationId</code> o el <code>traceId</code> que aparece en el log y en la traza.</p><p>Para decidir qué medir hay métodos probados: RED para servicios (Rate, Errors, Duration: solicitudes por segundo, errores, latencia), USE para recursos (Utilization, Saturation, Errors) y las cuatro señales doradas de Google (latencia, tráfico, errores, saturación). Una métrica de negocio (pagos aprobados, citas reservadas) responde \"¿el negocio está funcionando?\" aunque todos los servidores estén sanos, y suele ser la primera en cambiar cuando algo falla de verdad.</p><p>El assessment te pide distinguir tipos de monitoreo: de infraestructura (CPU, memoria, red), gestión de logs, APM (rendimiento de la aplicación y trazas), RUM (lo que vive el usuario real en su navegador o app), sintético (una sonda que ejecuta un flujo cada minuto desde fuera), de seguridad, auditoría transaccional (quién hizo qué, con valor probatorio) y de costos. No son lo mismo y se hacen con herramientas y retenciones distintas.</p><p>Cuándo NO: no registres datos personales ni secretos en logs; no etiquetes métricas con valores de alta cardinalidad (un id de usuario como etiqueta destruye Prometheus); y no crees alertas sin runbook, porque una alerta a la que nadie sabe responder es ruido.</p><hr class=\"sep\"><p class=\"lbl\">🧩 <strong>Ejemplo fácil</strong></p><p>Las tres señales: <strong>métricas</strong> (qué tan mal está: el termómetro), <strong>logs</strong> (qué pasó: el diario) y <strong>trazas</strong> (por dónde pasó la petición: el recorrido). Una métrica de negocio dice \"cuántos flujos de aprobación se crearon\"; una de infraestructura dice \"CPU al 80%\". Se alerta por <strong>síntoma</strong> (usuarios fallando), no por causa, y cada alerta lleva un runbook.</p><pre><code>RED: Rate (peticiones/s), Errors (% fallos), Duration (latencia p95)</code></pre><p class=\"lbl\">🏦 <strong>Cómo lo trabajamos en Entitlement</strong></p><ul><li><strong>Logs estructurados ECS (Elastic Common Schema):</strong> <code>Library_MR/ecs_logs</code> (<code>ecs-model</code>, <code>ecs-core</code>, <code>ecs-reactive</code>, <code>ecs-imperative</code>). <code>ReactiveLogsHandler implements WebFilter</code> (<code>@Order(Integer.MIN_VALUE)</code>) extrae/propaga <code>message-id</code> en el <code>Context</code> de Reactor (<code>MessageIdMngUseCase</code>). Elixir: <code>Library_MR/ecs_elixir_logs</code>.</li><li><strong>Correlación:</strong> <code>message-id</code> (UUID obligatorio), <code>X_REQUEST_ID</code> y <code>aidCreator</code> en <code>ContextData</code>. En <code>incidentes/</code> las consultas filtran por <code>trace_id</code>.</li><li><strong>Métricas:</strong> <code>spring-boot-starter-actuator</code> + <code>micrometer-registry-prometheus</code> (<code>ms_admin_authorization</code>, <code>client_parameters_ms</code>, <code>permitions_entitlement_ms</code>); <code>MicrometerMetricPublisher</code> publica métricas del SDK de AWS como <code>Timer</code>/<code>Counter</code>; el path de prometheus se permite en la <code>AuthorizationPolicy</code>.</li><li><strong>Health:</strong> <code>/actuator/health/readiness</code> y <code>/liveness</code> (+ <code>startupProbe</code>) en <code>app.yaml</code>; Elixir <code>get \"/health\"</code>.</li><li><strong>Trazas:</strong> OpenTelemetry en Elixir (<code>opentelemetry_plug</code>, <code>opentelemetry_ecto</code>, exporter OTLP, <code>Tracer.with_span \"redis.get_permission\"</code>, sidecar <code>opentelemetry.io/inject</code>). En Java no hay dependencias OTel en los <code>build.gradle</code> revisados: se usa <code>message-id</code>.</li><li><strong>Logs sin PII:</strong> <code>SensitiveHelper</code> y el sampling del configmap (<code>print-on-error</code>, <code>rules20XJson/rules40XJson</code>).</li></ul><p class=\"lbl\">⚠️ <strong>No encontrado en los micros</strong></p><ul><li>Alertas, dashboards y runbooks versionados: NO ENCONTRADO (solo un <code>grafana-event-decoder</code>). Trazas distribuidas en Java: NO ENCONTRADO.</li></ul><p><strong>Cómo contarlo:</strong> Tu historia: <code>message-id</code> propagado en el <code>Context</code> de Reactor para reconstruir un incidente. Reconoce que faltan alertas por síntoma y runbook (reto 25).</p>"}, {"id": "master_26", "level": "master", "title": "Arquitectura de datos", "front": "Arquitectura de datos — ciclo de vida: captura, almacenamiento, gestión, publicación, disposición.", "back": "<p>El ciclo de vida de los datos ordena las decisiones en el tiempo. Captura: se recolecta solo lo necesario para la finalidad declarada (minimización), con base legal o consentimiento y validando calidad en la entrada, porque un dato malo capturado aquí contamina todo lo que viene después. Almacenamiento: se decide dónde y por cuánto; es habitual separar el almacenamiento transaccional (rápido, caro, datos vivos) del histórico o de archivo (barato, de solo lectura), con plazos de retención justificados por negocio y por norma. Gestión: define el acceso (roles, mínimo privilegio, desde qué recursos), la protección (cifrado, enmascaramiento, seudonimización), el catálogo (qué dato existe, quién es su dueño, cómo se clasifica) y la calidad. Publicación: es cómo se entrega información a negocio y analítica; lo sano es publicar vistas, agregados o copias anonimizadas, no dar acceso a las tablas operativas. Disposición: el procedimiento explícito para eliminar o anonimizar lo que ya cumplió su plazo, dejando evidencia (qué se depuró, cuándo, bajo qué regla).</p><p>En Colombia el marco general de protección de datos personales es la Ley 1581 de 2012 (habeas data), que da al titular derechos de acceso, rectificación y supresión. Los datos de salud son sensibles y la historia clínica tiene reglas propias de conservación en la normativa del sector salud; verifica con tu equipo legal los plazos vigentes antes de afirmarlos, porque este reto te pide justificar los tuyos, no recitar una norma de memoria. Un punto fino y muy preguntado: el derecho de supresión puede chocar con una obligación legal de conservar; la respuesta usual es anonimizar o restringir lo que no se está obligado a guardar y bloquear el acceso a lo que sí.</p><p>Cuándo NO: no borres físicamente sin pensar en dependencias (una cita cancelada puede estar referenciada por un cobro); no guardes \"todo por si acaso\" (cada dato retenido es un riesgo y un costo); y no confundas anonimizar (irreversible, ya no es dato personal) con seudonimizar (reversible con una llave, sigue siendo dato personal).</p><hr class=\"sep\"><p class=\"lbl\">🧩 <strong>Ejemplo fácil</strong></p><p>El ciclo de vida de un dato: <strong>captura</strong> (formulario) → <strong>almacenamiento</strong> (BD) → <strong>gestión</strong> (calidad, accesos) → <strong>publicación</strong> (qué se comparte y cómo) → <strong>disposición</strong> (borrado). Minimizar es no pedir lo que no usarás. Anonimizar no se puede revertir; seudonimizar sí (con una llave aparte).</p><pre><code>CREATE VIEW v_publicacion AS SELECT id, ciudad, edad_rango FROM clientes;   -- sin nombre ni documento</code></pre><p>Habeas data (Ley 1581 de 2012): el titular puede conocer, actualizar y suprimir sus datos.</p><p class=\"lbl\">🏦 <strong>Cómo lo trabajamos en Entitlement</strong></p><ul><li><strong>Almacenamiento:</strong> esquemas PostgreSQL por dominio (<code>shentitp</code> core, <code>scenttrx</code> transaccional; ER en <code>bd/*.png</code>), DynamoDB y Redis.</li><li><strong>Gestión del cambio:</strong> Liquibase con contexto <code>REF,QA,PDN</code>, nombres <code>NN_DDMMAAAA_ACCION_tabla.sql</code>, <code>data_dml</code>, <code>function</code>, <code>trigger</code>, <code>view</code> (<code>ENTITLEMENT_ENTMG_SQL</code>/<code>ENTNT_SQL</code>). Trigger de ejemplo: <code>trg_delete_temp_flow_on_status_change</code> (limpia temporales al cambiar el estado de la transacción).</li><li><strong>Rendimiento del dato:</strong> <code>CREATE INDEX</code> sobre <code>administrative_transactions</code>, <code>CREATE INDEX CONCURRENTLY</code> en <code>tbl_transactions</code>, y la carpeta <code>OPTIMIZACION_CONSULTA</code> con planes <code>EXPLAIN (ANALYZE, BUFFERS)</code> (Hash Join, Seq Scan con filtro de estado, Memoize).</li><li><strong>Disposición / depuración:</strong> índice <code>tbl_transactions_update_date_depuration_idx</code> creado \"para optimizar la consulta de depuración\"; TTL con <code>aws.dynamodb.expirationDays</code> y <code>expirationTime</code> en Redis.</li><li><strong>Publicación segura:</strong> el enmascaramiento existe en <strong>logs</strong> (<code>SensitiveHelper</code>), no en la BD.</li><li><strong>Correcciones de datos:</strong> <code>migracion/</code> usa <code>generar_updates.py</code> que arma <code>UPDATE</code> desde CSV, con scripts <code>validar_*.sql</code> y validación por fases antes y después.</li></ul><p class=\"lbl\">⚠️ <strong>No encontrado en los micros</strong></p><ul><li>Particionado de tablas y enmascaramiento/anonimización en BD: NO ENCONTRADO. Políticas de retención formales y vista de publicación sin datos personales: NO ENCONTRADO (reto 26).</li></ul><p><strong>Cómo contarlo:</strong> Ciclo de vida con ejemplos reales: Liquibase (gestión), índice de depuración (disposición), TTL (disposición), enmascaramiento en logs (publicación). Y di qué te falta: vista de publicación y política de retención.</p>"}];
+  var EXTRA = {"poo": "<hr class=\"sep\"><p class=\"lbl\">🧩 <strong>Ejemplo fácil</strong></p><p>Piensa en canales de notificación. La clase abstracta define <em>qué</em> se hace; cada subclase define <em>cómo</em>:</p><pre><code>abstract class Canal { abstract String enviar(String mensaje); }\nclass Correo extends Canal { String enviar(String m) { return \"correo: \" + m; } }\nclass Sms    extends Canal { String enviar(String m) { return \"sms: \" + m; } }\n\nList&lt;Canal&gt; canales = List.of(new Correo(), new Sms());\ncanales.forEach(c -&gt; c.enviar(\"tu flujo fue aprobado\"));   // polimorfismo: quien llama no sabe cuál es cuál</code></pre><p>Cuándo NO: si las \"subclases\" solo cambian un dato, no necesitas herencia; basta un campo o un enum.</p><p class=\"lbl\">🏦 <strong>Cómo lo trabajamos en Entitlement</strong></p><ul><li><strong>Abstracción + herencia + validación:</strong> <code>AbstractString</code> (clase abstracta con constructor protegido que valida) y <code>RoleCode extends AbstractString</code>, que solo acepta <code>TIT, TRE, REP, TAD, TAR</code>. Micro <code>Entitlement_Service_MR/ms_actors</code>, paquete <code>model/.../value</code>.</li><li><strong>Genéricos:</strong> <code>Command&lt;P, C&gt;(payload, context)</code> (record) y <code>DomainEvent&lt;T&gt;</code> en <code>ms_actors</code>; <code>CommandHandler&lt;T extends CommandBusData&gt;</code> y <code>CommandBus.dispatch(T command)</code> en <code>Monetary_Limits_MR/ms_limit_create</code>.</li><li><strong>Anotaciones propias:</strong> <code>@UseCase</code>, <code>@DomainService</code>, <code>@EventHandlerService</code> (masam_core_ms, ms_authorization_flows) y <code>@CommandHandlerService</code> (<code>ms_limit_create</code>) — marcadores <code>@Retention(RUNTIME)</code> que el registro descubre por reflexión.</li><li><strong>Polimorfismo:</strong> <code>ValidateSchemeChannelHandler implements SyncEventHandler&lt;ValidateSchemeChannelInitiatedEvent&gt;</code> en <code>Entitlement_MASAM_MR/masam_core_ms</code>: el bus resuelve el handler por tipo de evento.</li></ul><p class=\"lbl\">⚠️ <strong>No encontrado en los micros</strong></p><ul><li>No hay jerarquías profundas de herencia de negocio: el proyecto favorece composición + interfaces (gateways).</li></ul><p><strong>Cómo contarlo:</strong> Abre con <code>RoleCode</code>: \"la validación vive en el tipo, no regada por los casos de uso\". Luego <code>CommandHandler&lt;T&gt;</code> para genéricos y polimorfismo.</p>", "solid": "<hr class=\"sep\"><p class=\"lbl\">🧩 <strong>Ejemplo fácil</strong></p><p>Un <code>if/else</code> por tipo de descuento crece cada vez que el negocio inventa uno nuevo (viola OCP). Con Strategy cada regla es una clase y el código que decide no cambia:</p><pre><code>interface Descuento { boolean aplica(Pedido p); double calcular(Pedido p); }\n// Spring inyecta List&lt;Descuento&gt;; para agregar uno nuevo solo creas otra clase\ndescuentos.stream().filter(d -&gt; d.aplica(pedido)).findFirst().map(d -&gt; d.calcular(pedido)).orElse(0.0);</code></pre><p>Cuándo NO: con 2 casos estables un <code>if</code> es más simple (KISS/YAGNI).</p><p class=\"lbl\">🏦 <strong>Cómo lo trabajamos en Entitlement</strong></p><ul><li><strong>SRP:</strong> un caso de uso por clase con un método público. <code>CreateRuleExceptionUseCase</code> (<code>ms_actors</code>) solo orquesta (cambia estado → grupo granular → crea la excepción); el rollback es un método privado aparte (<code>onErrorResume(error -&gt; rollbackGranularProduct(...))</code>).</li><li><strong>DIP:</strong> el dominio define el puerto <code>CreateRuleExceptionGateway</code>; la implementación <code>CreateRuleExceptionAdapter</code> (<code>@Repository</code>, <code>@Transactional(\"coreTransactionManager\")</code>) vive en <code>driven-adapters/r2dbc-postgresql</code>. El caso de uso nunca ve R2DBC.</li><li><strong>OCP bien aplicado:</strong> <code>DestinationStrategy</code>/<code>OriginStrategy</code> con <code>supports(...)</code> y las implementaciones <code>DestinationRoleStrategy</code>, <code>DestinationThirdPartyStrategy</code>, <code>DestinationCustomerStrategy</code>, <code>DestinationDelegateStrategy</code> (<code>Monetary_Limits_MR/ms_limit_clone_processor</code>). Lo mismo con <code>CommandHandlersRegistry</code> en <code>ms_limit_create</code>.</li><li><strong>OCP mal aplicado (úsalo como autocrítica):</strong> <code>MonetaryLimitCreator.performActionValidationAndPersistence</code> (<code>ms_limit_create</code>) decide con <code>if/else if</code> sobre <code>ActionToPerform</code>. Es el candidato natural a Strategy.</li><li><strong>DRY/KISS:</strong> <code>ValidateActorRoleCapabilitiesUseCase</code> (<code>ms_admin_authorization</code>) indexa los productos en un <code>Set</code> de claves <code>id|tipo</code> en vez de recorrer la lista por cada producto solicitado (de O(n·m) a O(n+m)).</li></ul><p class=\"lbl\">⚠️ <strong>No encontrado en los micros</strong></p><ul><li>Strategy como <code>Map&lt;String, XStrategy&gt;</code> no aparece; el proyecto usa <code>List&lt;Strategy&gt;</code> + <code>supports()</code>.</li></ul><p><strong>Cómo contarlo:</strong> Muestra el contraste: <code>DestinationStrategy</code> (OCP cumplido) vs <code>MonetaryLimitCreator</code> (el <code>if/else</code> que refactorizarías). Reconocer el defecto vale más que fingir que todo es perfecto.</p>", "excepciones": "<hr class=\"sep\"><p class=\"lbl\">🧩 <strong>Ejemplo fácil</strong></p><pre><code>// unchecked: error de negocio, el llamador no puede \"arreglarlo\" en el momento\nif (saldo &lt; monto) throw new SaldoInsuficienteException(saldo, monto);\n\n// checked: I/O que SÍ puede fallar y el llamador debe decidir\ntry (var in = Files.newInputStream(ruta)) { ... }          // try-with-resources cierra solo\ncatch (IOException e) { throw new ReporteException(\"no pude leer \" + ruta, e); }   // chaining: conserva la causa (e)</code></pre><p>Regla: una excepción por <strong>qué falló en el negocio</strong>, no por quién la lanzó; y siempre pasa la causa original.</p><p class=\"lbl\">🏦 <strong>Cómo lo trabajamos en Entitlement</strong></p><ul><li><strong>Jerarquía propia:</strong> <code>BusinessException</code> y <code>AppException</code>, ambas <code>extends BusinessExceptionECS</code> (librería ECS), y el enum <code>ConstantBusinessException</code> que trae HTTP status, mensaje, código de negocio, mensaje interno y código de log por cada error (<code>ms_actors/domain/model/.../exception</code>). Solo en <code>ms_actors</code> hay ~137 <code>new BusinessException(...)</code>.</li><li><strong>Manejo global WebFlux:</strong> <code>ExceptionResponse</code> (<code>@Order(-2)</code>, <code>extends AbstractErrorWebExceptionHandler</code>) en <code>ms_actors</code>: traduce <code>BusinessException</code> → <code>AppException</code> → error desconocido 500, y manda log a SQS. Equivalente: <code>GlobalWebExceptionHandler implements WebExceptionHandler</code> en <code>ms_limit_clone_processor</code>.</li><li><strong>Manejo global MVC:</strong> <code>CustomExceptionHandler</code> con <code>@ControllerAdvice</code> en <code>ms_masam</code> (el único micro MVC).</li><li><strong>Traducción/wrapping:</strong> en <code>ExecTrxCreateDelegateUseCase</code>, <code>.onErrorMap(t -&gt; t instanceof AppException || t instanceof BusinessException ? t : new AppException(UNKNOWN_FINISH_CREATE_DELEGATE, messageId))</code>.</li><li><strong>Compensación:</strong> <code>onErrorResume(error -&gt; rollback(...).then(Mono.error(error)))</code> en <code>CreateRuleExceptionUseCase</code>.</li><li><strong>try-with-resources:</strong> solo 2 usos reales, en <code>GetConsumerServiceAdapter</code> y <code>GenerateAndSendOtpAdapter</code> (<code>ms_masam</code>), sobre la respuesta HTTP.</li></ul><p class=\"lbl\">⚠️ <strong>No encontrado en los micros</strong></p><ul><li>Debilidad real: <code>BusinessException(ConstantBusinessException, Throwable)</code> solo propaga <code>getMessage()</code>, no el <code>cause</code>. El exception chaining queda débil — mencionarlo y decir cómo lo arreglarías es un buen punto.</li></ul><p><strong>Cómo contarlo:</strong> Enum de errores centralizado + handler global que convierte excepción → HTTP. Cierra con la mejora del <code>cause</code>.</p>", "estructuras": "<hr class=\"sep\"><p class=\"lbl\">🧩 <strong>Ejemplo fácil</strong></p><p>Buscar un permiso en una lista de 10.000 es recorrerla; en un <code>Set</code> es un salto directo:</p><pre><code>List&lt;String&gt; permisos = ...;      permisos.contains(\"PAGAR\");   // O(n)\nSet&lt;String&gt;  permisos = new HashSet&lt;&gt;(...); permisos.contains(\"PAGAR\"); // O(1) promedio\nMap&lt;String, List&lt;Permiso&gt;&gt; porRol = permisos.stream().collect(groupingBy(Permiso::rol)); // agrupar sin doble for</code></pre><p>Cuándo NO: con 5 elementos la diferencia es invisible; legibilidad primero.</p><p class=\"lbl\">🏦 <strong>Cómo lo trabajamos en Entitlement</strong></p><ul><li><strong><code>Map</code> como catálogo cargado al arranque:</strong> <code>StateConfig</code> y <code>PrivilegeConfig</code> (<code>ms_admin_authorization</code>, <code>r2dbc-postgresql/.../config</code>) hacen <code>collect(Collectors.toMap(StateData::getNameState, d -&gt; d))</code> una sola vez. Ojo: usan <code>.block()</code>, aceptable solo en el arranque.</li><li><strong><code>Set</code> para pertenencia O(1):</strong> <code>ValidateActorRoleCapabilitiesUseCase</code> (<code>Set</code> de claves <code>id|tipo</code>), <code>RoleCode</code> (<code>Set.of(\"TIT\",\"TRE\",\"REP\",\"TAD\",\"TAR\")</code>) y <code>PermissionsUseCase</code> (<code>Set.of(...)</code> de privilegios válidos).</li><li><strong><code>toMap</code> con merge function</strong> para deduplicar: <code>ValidateProductGroupUseCase</code> (<code>(first, dup) -&gt; first</code>), reemplazando un <code>findFirst</code> lineal.</li><li><strong><code>groupingBy</code> en lógica real:</strong> <code>OwnerFlowUseCase</code> (<code>Monetary_Limits_MR/ms_limit_orchestration_services</code>) agrupa <code>ChannelLimits</code> por <code>getClientLimitsId</code> y hace el \"join en memoria\" con <code>containsKey/get</code>; también <code>ThirdCustomerFlowUseCase</code>, <code>UpdateRoleByFeatureLogUseCase</code>.</li><li><strong>Concurrencia:</strong> <code>ConcurrentHashMap</code> en <code>CurrenciesAdapter</code> (<code>ms_limit_create</code>) y un caché de <code>Mono</code> en <code>RetrieveObjectRoleUseCase</code> (<code>ms_limit_clone_processor</code>). <code>TreeMap</code> en <code>ReverseReason</code>/<code>CurrencyValues</code>, <code>LinkedHashMap</code> en <code>FunctionalLogPayload</code>.</li></ul><p class=\"lbl\">⚠️ <strong>No encontrado en los micros</strong></p><ul><li><code>PriorityQueue</code>, <code>Deque</code> y <code>EnumMap</code> no aparecen en los micros.</li></ul><p><strong>Cómo contarlo:</strong> La historia más fuerte: el refactor de <code>ValidateActorRoleCapabilitiesUseCase</code> de lista a <code>Set</code> y por qué (Big O).</p>", "capas": "<hr class=\"sep\"><p class=\"lbl\">🧩 <strong>Ejemplo fácil</strong></p><p>Un restaurante: el <strong>mesero</strong> (controller) toma el pedido y no cocina; el <strong>cocinero</strong> (use case/service) aplica la receta; la <strong>despensa</strong> (repository) guarda los ingredientes. Si el mesero abre la despensa directo, cambiar de proveedor obliga a reentrenar al mesero.</p><pre><code>Controller → UseCase → Gateway (interfaz) ← Adapter (BD/REST)</code></pre><p>Cuándo NO: en un script de 50 líneas, tres capas son sobreingeniería.</p><p class=\"lbl\">🏦 <strong>Cómo lo trabajamos en Entitlement</strong></p><ul><li>Todos los micros Java tienen el mismo esqueleto del plugin <code>co.com.bancolombia.cleanArchitecture</code>: <code>applications/app-service</code>, <code>domain/model</code>, <code>domain/usecase</code>, <code>infrastructure/entry-points/{reactive-web, async-event-handler}</code>, <code>infrastructure/driven-adapters/{r2dbc-postgresql, dynamo-db, redis, rest-consumer, async-event-bus}</code>, <code>infrastructure/helpers</code>.</li><li><strong>La estructura se hace cumplir:</strong> <code>compileJava.dependsOn validateStructure</code> y <code>ArchitectureTest</code> (ArchUnit, viene del scaffold) rompen el build si violas capas.</li><li><strong>Recorrido real (WebFlux funcional):</strong> <code>UpdateExceptionRoute</code> (RouterFunction <code>route(POST(...), handler::updateException)</code>) → <code>UpdateExceptionHandler</code> → caso de uso → <code>*Gateway</code> → <code>*Adapter</code> (<code>ms_actors</code>).</li><li><strong>Otras entradas:</strong> <code>@RestController</code> MVC en <code>ms_masam</code> (<code>GetAuthorizationFlowController</code>), GraphQL en <code>permitions_entitlement_ms</code> (<code>GetByChannelGraphqlController</code>), consumidores de eventos en <code>async-event-handler</code>.</li><li>Dentro de cada capa se separa <code>info|management</code> (consulta vs comando) y <code>main|sub</code> proceso; las reglas están en la skill de revisión de <code>Library_MR/cursor-sources</code>.</li></ul><p class=\"lbl\">⚠️ <strong>No encontrado en los micros</strong></p><ul><li>Los README de los micros son plantilla del scaffold; no describen la arquitectura propia (ver tema 20).</li></ul><p><strong>Cómo contarlo:</strong> \"Controller no habla con la BD porque el build me lo prohíbe\": menciona <code>validateStructure</code> + ArchUnit. Es evidencia, no opinión.</p><hr class=\"sep\"><p class=\"lbl\">🧩 <strong>Ejemplo fácil</strong></p><p>¿Quién calcula el total de una factura? Quien tiene los datos: la propia <code>Factura</code> (<strong>Experto</strong>). ¿Quién construye los <code>Item</code>? Quien los contiene o los usa de cerca: <code>Factura.agregar(...)</code> (<strong>Creador</strong>). Un <code>FacturaController</code> solo recibe la petición y delega (<strong>Controlador</strong>).</p><pre><code>class Factura { List&lt;Item&gt; items; double total() { return items.stream().mapToDouble(Item::subtotal).sum(); } }</code></pre><p class=\"lbl\">🏦 <strong>Cómo lo trabajamos en Entitlement</strong></p><ul><li><strong>Experto:</strong> <code>CreateNaturalPerson</code> (<code>ms_actors</code>) tiene el <code>aid</code> y valida con <code>isValidAid()</code> / <code>isValidType(...)</code>; <code>RelationshipCreator.isPrivDirect()</code>.</li><li><strong>Creador:</strong> <code>@Builder(toBuilder = true)</code> en los modelos y <code>BuildCreateExceptionRule.buildEventData(...)</code> (<code>@UtilityClass</code>) que arma el evento a partir del comando.</li><li><strong>Controlador:</strong> los <code>*Handler</code> de <code>reactive-web</code> (ej. <code>RetrieveUserHandler</code>) validan headers y delegan a <code>UseCase</code>; un caso de uso orquestador como <code>MonetaryLimitCreator</code>.</li><li><strong>Bajo acoplamiento / Polimorfismo:</strong> casos de uso que dependen solo de <code>*Gateway</code>; <code>SyncEventHandler&lt;T&gt;</code> y <code>CommandHandler&lt;T&gt;</code> resueltos por tipo.</li><li><strong>Fabricación pura:</strong> <code>ValueValidator</code>, <code>ExceptionResponse</code>, <code>MapperFactory</code>, <code>CommandHandlersRegistry</code> (clases sin concepto de negocio, creadas por cohesión).</li><li><strong>Indirección:</strong> <code>ReactiveEventsGateway</code> entre los casos de uso y el <code>DomainEventBus</code>.</li></ul><p class=\"lbl\">⚠️ <strong>No encontrado en los micros</strong></p><ul><li>Protected Variations como patrón nombrado no aparece, aunque los gateways cumplen ese rol.</li></ul><p><strong>Cómo contarlo:</strong> Elige 3: Experto (<code>CreateNaturalPerson</code>), Fabricación pura (<code>ValueValidator</code>) e Indirección (<code>ReactiveEventsGateway</code>). Con ejemplo propio cada una.</p>", "normalizacion": "<hr class=\"sep\"><p class=\"lbl\">🧩 <strong>Ejemplo fácil</strong></p><p>Tabla <code>pedido(id, cliente_nombre, cliente_ciudad, producto, precio)</code>: el cliente se repite en cada fila. Normalizar es partir en <code>cliente</code>, <code>producto</code> y <code>pedido_producto</code> (tabla puente con PK compuesta):</p><pre><code>CREATE TABLE pedido_producto (\n  pedido_id INT, producto_id INT, cantidad INT,\n  PRIMARY KEY (pedido_id, producto_id),\n  FOREIGN KEY (pedido_id)   REFERENCES pedido(id),\n  FOREIGN KEY (producto_id) REFERENCES producto(id));</code></pre><p>Cuándo NO: en reportes/lecturas masivas a veces se desnormaliza a propósito (trade-off consciente).</p><p class=\"lbl\">🏦 <strong>Cómo lo trabajamos en Entitlement</strong></p><ul><li><strong>Convención del esquema:</strong> <code>tbl_core_*</code> (relationship, role, state, functionality, privilege, schema), tablas puente <code><em>_vs_</em></code> (<code>tbl_core_role_vs_functionality</code>, <code>tbl_core_schema_vs_client</code>, <code>tbl_core_gp_granular_vs_product</code>), temporales <code>tbl_temp_*</code>, columnas con prefijo <code>pk_</code> / <code>fk_</code>.</li><li><strong>Tabla puente con PK compuesta y FK con <code>ON DELETE CASCADE</code>:</strong> <code>tbl_temp_flow_func_vs_product</code> (repo <code>ENTITLEMENT_ENTNT_SQL</code>, <code>sql_code/ddl/09_14082026_CREATE_TABLE_...</code>).</li><li><strong>Catálogo vs hechos:</strong> <code>tbl_exception_attribute</code> (catálogo) y <code>tbl_exception_core</code> (hechos) en <code>ENTITLEMENT_ENTMG_SQL/sql_code/ddl</code>.</li><li><strong>Cambios versionados con Liquibase</strong>, <code>--changeset &lt;usuario&gt;:&lt;HU&gt; context:REF,QA,PDN</code>, nombre <code>NN_DDMMAAAA_ACCION_tabla.sql</code>.</li><li><strong>Autocrítica (buena para entrevista):</strong> en <code>tbl_exception_core</code> solo se declara la PK (las <code>fk_*</code> no tienen constraint) y repite <code>attr_code</code>, <code>data_type</code>, <code>attr_units</code> que ya viven en <code>tbl_exception_attribute</code>: eso rompe 3FN. Se puede defender como decisión de rendimiento/legado, pero dilo tú antes de que te lo pregunten.</li></ul><p class=\"lbl\">⚠️ <strong>No encontrado en los micros</strong></p><ul><li>Las normas 1FN/2FN/3FN no están documentadas en el repo; el esquema las sigue en lo general.</li></ul><p><strong>Cómo contarlo:</strong> Tabla puente + catálogo y luego la excepción consciente (<code>tbl_exception_core</code>) con su trade-off.</p>", "junior_ia": "<hr class=\"sep\"><p class=\"lbl\">🧩 <strong>Ejemplo fácil</strong></p><p>Regla simple: delega a la IA lo mecánico y verificable (boilerplate, tests de caminos felices, borradores de docs); <strong>no</strong> delegues decidir la arquitectura ni entender el porqué. Si no puedes explicar el código que aceptaste, no lo aceptes.</p><p class=\"lbl\">🏦 <strong>Cómo lo trabajamos en Entitlement</strong></p><ul><li>El equipo tiene una <strong>skill de revisión de código con IA</strong> en <code>Library_MR/cursor-sources/skills/java-code-review/</code> (<code>SKILL.md</code>, <code>reference.md</code>, <code>examples.md</code>, <code>review-template.md</code>). Revisa una carpeta de proceso de negocio contra cinco principios: (1) estructura <code>info/management</code> y <code>main/sub</code>, (2) paradigma funcional pragmático con Reactor y un solo <code>Command/Query</code> por caso de uso, (3) estilo (Google Java Style, Clean Code, Effective Java), (4) separación de efectos (el dominio no hace I/O, logs ni lee el reloj), (5) DDD con value objects y agregados.</li><li>Reglas en inglés, feedback en español: la IA <strong>revisa contra reglas del equipo</strong> y el humano decide.</li></ul><p class=\"lbl\">⚠️ <strong>No encontrado en los micros</strong></p><ul><li><code>AGENTS.md</code>, <code>CLAUDE.md</code>, <code>.cursorrules</code> y <code>copilot-instructions</code> no aparecen en <code>Micros/</code>.</li></ul><p><strong>Cómo contarlo:</strong> \"Uso IA como revisor con reglas explícitas, no como generador ciego\": la skill <code>java-code-review</code> es tu evidencia. Ten claro qué te toca a ti.</p>", "protocolos": "<hr class=\"sep\"><p class=\"lbl\">🧩 <strong>Ejemplo fácil</strong></p><p>REST es preguntar y esperar respuesta (como mandar un WhatsApp y volver a mirar si contestaron). WebSocket es una llamada abierta: el servidor te avisa cuando hay novedad.</p><pre><code>// REST: el cliente consulta cada 5 s si el flujo ya fue aprobado (polling)\n// WebSocket: una conexión abierta; el servidor empuja \"flujo aprobado\" cuando ocurre</code></pre><p>Cuándo NO: para consultas puntuales REST es más simple, cacheable y fácil de escalar.</p><p class=\"lbl\">🏦 <strong>Cómo lo trabajamos en Entitlement</strong></p><ul><li><strong>WebSocket, SOAP, gRPC, RSocket y MQTT no aparecen</strong> en los <code>build.gradle</code> de los micros. No lo afirmes como experiencia del proyecto.</li><li><strong>Sí hay otros protocolos:</strong> <strong>GraphQL</strong> en <code>EntitlementAnalitica_MR/permitions_entitlement_ms</code> (<code>spring-boot-starter-graphql</code>, <code>schema.graphqls</code>, <code>GetByChannelGraphqlController</code> con <code>@QueryMapping</code>, <code>GlobalGraphQLExceptionHandler</code>) y <strong>AMQP/RabbitMQ</strong> con <code>reactive-commons</code> (<code>async-commons-rabbit-starter</code>) en casi todos los micros, más contratos <strong>AsyncAPI</strong> en <code>ms_actors/deployment/ApiDoc</code>.</li><li>Dónde aplicaría WebSocket (idea, no existente): notificar al aprobador en tiempo real que tiene un flujo pendiente (hoy sería consulta REST o evento).</li></ul><p class=\"lbl\">⚠️ <strong>No encontrado en los micros</strong></p><ul><li>WebSocket / gRPC / SOAP: NO ENCONTRADO.</li></ul><p><strong>Cómo contarlo:</strong> Habla de GraphQL y AMQP como tu experiencia real, y del reto 9 como la práctica de WebSocket, diciendo explícitamente que en Entitlement no se usa.</p>", "cache": "<hr class=\"sep\"><p class=\"lbl\">🧩 <strong>Ejemplo fácil</strong></p><p>La libreta de teléfonos pegada en la nevera: antes de buscar en internet (la BD) miras la libreta (el caché). Si no está, buscas y lo anotas con fecha de vencimiento (TTL).</p><pre><code>return cache.get(id)                                   // cache-aside\n    .switchIfEmpty(Mono.defer(() -&gt; fuente.consultar(id)\n        .flatMap(v -&gt; cache.guardar(id, v, Duration.ofMinutes(10)).thenReturn(v))));</code></pre><p>Cuándo NO: datos que cambian en cada petición o que exigen consistencia fuerte al instante.</p><p class=\"lbl\">🏦 <strong>Cómo lo trabajamos en Entitlement</strong></p><ul><li><strong>Redis reactivo con TTL:</strong> <code>ClientInformationCacheAdapter</code> (<code>Entitlement_Service_MR/client_parameters_ms</code>, módulo <code>redis</code>): <code>ReactiveRedisTemplate.opsForValue().set(id, valor, Duration.ofSeconds(expirationTime))</code>, TTL por <code>adapter.redis.expirationTime</code>. Misma estructura en <code>products_information_ms</code> (<code>PermissionCacheAdapter</code>), <code>ms_actors</code> (<code>BasicInformationCacheAdapter</code>) y <code>operational_transaction_management_ms</code> (<code>SaveConsumerCacheAdapter</code>/<code>GetConsumerCacheAdapter</code>).</li><li><strong>Cache-Aside manual:</strong> <code>RetrieveClientInformationAdapter.getOwnerBasicInformationFromCache</code>: lee Redis, <code>switchIfEmpty</code> llama al servicio MDM y puebla el caché en segundo plano.</li><li><strong>Caché local L1 con Caffeine:</strong> <code>CacheCaffeineConfig</code> (<code>expireAfterWrite</code>, <code>maximumSize</code>, <code>recordStats</code>), usado por <code>QueryRoleBySchemeGatewayAdapter</code> / <code>SaveTemporalRoleBySchemeGatewayAdapter</code>. Resultado: caché de dos niveles (Caffeine → Redis → fuente).</li><li><strong>Redis con réplica de lectura:</strong> <code>RedisConfig</code> usa <code>ReadFrom.REPLICA_PREFERRED</code>; credenciales desde Secrets Manager.</li><li><strong>Elixir:</strong> <code>ms_retrieve_role/.../permission_cache_read.ex</code> cachea permisos con prefijo <code>PER</code>.</li></ul><p class=\"lbl\">⚠️ <strong>No encontrado en los micros</strong></p><ul><li>Read-Through, Write-Through y Write-Behind no aparecen (no hay <code>@Cacheable</code> tampoco): el proyecto usa Cache-Aside. Las otras tres son teoría + reto 10.</li></ul><p><strong>Cómo contarlo:</strong> Cache-Aside en dos niveles, con TTL por configuración. Prepárate para \"¿qué pasa si el rol cambia mientras está en caché?\" (invalidación/TTL).</p>", "cleanarch": "<hr class=\"sep\"><p class=\"lbl\">🧩 <strong>Ejemplo fácil</strong></p><p>El enchufe de la pared (puerto) no sabe si del otro lado hay una lámpara o una licuadora (adaptador). El negocio define el enchufe; la tecnología se conecta.</p><pre><code>interface PagosGateway { Mono&lt;Recibo&gt; cobrar(Pedido p); }          // dominio\nclass PagosPseAdapter implements PagosGateway { ... }              // infraestructura</code></pre><p>La dependencia apunta hacia adentro: infraestructura conoce al dominio, nunca al revés.</p><p class=\"lbl\">🏦 <strong>Cómo lo trabajamos en Entitlement</strong></p><ul><li>Plugin <code>co.com.bancolombia.cleanArchitecture</code> (v3.20.15) en todos los micros: módulos <code>:model</code> (<code>domain/model</code>), <code>:usecase</code> (<code>domain/usecase</code>), <code>:reactive-web</code>, <code>:async-event-handler</code>, <code>:redis</code>, <code>:r2dbc-*</code>, <code>:dynamo-db</code>, <code>:async-event-bus</code>, <code>:rest-consumer</code>, <code>:app-service</code>.</li><li><strong>Puerto → caso de uso → adaptador:</strong> <code>GetSchemeClientGateway</code> (<code>domain/model/.../schemeclient/search/gateway</code>) → <code>GetSchemeClientUseCase</code> (<code>@RequiredArgsConstructor</code>, dependencias <code>final</code>) → adaptadores en <code>driven-adapters</code>; otro ejemplo: <code>RetrieveRoleLimitAdapter implements RetrieveRoleLimitGateway</code> (<code>Monetary_Limits_MR/ms_limit_orchestration_services</code>, <code>r2dbc-postgresql</code>).</li><li><strong>Reglas verificadas por ArchUnit</strong> (<code>ArchitectureTest</code>): clases de dominio sin sufijos de tecnología, UseCases solo con atributos <code>final</code>, flujos reactivos con clientes AWS asíncronos.</li><li><strong>CQRS ligero en el modelo:</strong> <code>Query&lt;P,C&gt;</code> y <code>Command&lt;P,C&gt;</code> como records, con <code>@UseCase</code>.</li></ul><p><strong>Cómo contarlo:</strong> Dibuja un caso real: <code>RouterFunction</code> → <code>UseCase</code> → <code>Gateway</code> → <code>Adapter</code> y señala que <code>ArchitectureTest</code> rompe el build si el dominio importa infraestructura.</p>", "gof": "<hr class=\"sep\"><p class=\"lbl\">🧩 <strong>Ejemplo fácil</strong></p><p><strong>Factory</strong> = pedir \"una pizza\" y que la cocina decida la masa. <strong>Builder</strong> = armar la pizza paso a paso. <strong>Strategy</strong> = elegir cómo cobrar el domicilio (por km, fijo, gratis).</p><pre><code>Pizza p = Pizza.builder().tamano(\"L\").extra(\"queso\").build();     // Builder\nCobro c = estrategias.stream().filter(e -&gt; e.supports(pedido)).findFirst().orElseThrow(); // Strategy</code></pre><p>Cuándo NO: no metas un patrón si una función simple resuelve; los patrones son vocabulario, no meta.</p><p class=\"lbl\">🏦 <strong>Cómo lo trabajamos en Entitlement</strong></p><ul><li><strong>Strategy:</strong> <code>DestinationStrategy</code>/<code>OriginStrategy</code> con <code>supports()</code> y 4 implementaciones; el contexto <code>CloneLimitDispatcher.findDestinationStrategy</code> hace <code>Flux.fromIterable(strategies).filter(s -&gt; s.supports(command)).next().switchIfEmpty(Mono.error(...))</code> (<code>Monetary_Limits_MR/ms_limit_clone_processor</code>).</li><li><strong>Builder:</strong> Lombok <code>@Builder(toBuilder = true)</code> en <code>SchemeClientCreated</code>, <code>RoleManagement</code>, <code>SaveEventPublicationInfo</code>; builder manual <code>ManagedRequest.&lt;T&gt;builder().withService(...).build()</code> en <code>RetrieveClientLimitService</code>.</li><li><strong>Factory:</strong> <code>FunctionalLogFactory.build(...)</code> (constructor privado) en <code>transversal-log</code>; <code>MapperFactory</code> en <code>async-event-handler</code> y <code>ms_actors</code>.</li><li><strong>Template Method:</strong> <code>TemplateAdapterOperations&lt;E,V&gt;</code> (hooks <code>toEntity</code>/<code>toModel</code>) y <code>DynamoDBTemplateAdapter extends TemplateAdapterOperations&lt;...&gt;</code> en <code>Entitlement_MASAM_MR/ms_masam</code>.</li><li><strong>Command / Mediator:</strong> <code>InMemoryCommandBus</code> (resuelve el handler por tipo de comando con <code>applicationContext.getBean</code>).</li><li><strong>Singleton:</strong> beans Spring por defecto; <code>EventFormatProvider.getInstance()</code> (cloudevents).</li></ul><p class=\"lbl\">⚠️ <strong>No encontrado en los micros</strong></p><ul><li>Decorator, Observer y Chain of Responsibility explícitos: NO ENCONTRADO. Para esos usa el reto 12.</li></ul><p><strong>Cómo contarlo:</strong> Strategy (<code>CloneLimitDispatcher</code>) como estrella, luego Template Method (<code>DynamoDBTemplateAdapter</code>) como patrón menos obvio que sí usan.</p>", "resiliencia": "<hr class=\"sep\"><p class=\"lbl\">🧩 <strong>Ejemplo fácil</strong></p><p>Un fusible: si la plancha falla una y otra vez, el fusible corta para no quemar la casa; pasado un rato prueba si ya se puede volver a conectar.</p><pre><code>// Retry con backoff solo para errores transitorios (5xx), nunca para 4xx\n.retryWhen(Retry.backoff(3, Duration.ofMillis(200)).filter(e -&gt; e instanceof WebClientResponseException w &amp;&amp; w.getStatusCode().is5xxServerError()))</code></pre><p>Cuándo NO: reintentar operaciones no idempotentes (cobros) sin llave de idempotencia; reintentar sin límite empeora una caída.</p><p class=\"lbl\">🏦 <strong>Cómo lo trabajamos en Entitlement</strong></p><ul><li><strong>Retry con backoff reactivo filtrado:</strong> <code>RetrieveClientLimitService</code> (<code>Monetary_Limits_MR/ms_limit_orchestration_services</code>): <code>Retry.backoff(MAX_ATTEMPTS, ...).filter(this::isRetryable)</code>, solo errores 5xx.</li><li><strong>Retry de failover de BD:</strong> <code>AuroraFailoverRetrySupport</code> (<code>Monetary_Transactions_MR/operational_transaction_management_ms</code>, <code>r2dbc-aurora-support</code>): <code>Retry.backoff(...).maxBackoff(...).filter(this::isFailoverError)</code>; lo usa <code>SaveInitTransactionAdapter</code>. Y el validador de rol del cluster (<code>AuroraConnectionRoleValidator</code>, espera <code>WRITER</code>).</li><li><strong>Timeouts:</strong> <code>RestConsumerConfig</code> (Netty <code>ConnectTimeout</code>, <code>ReadTimeoutHandler</code>, <code>WriteTimeoutHandler</code>); <code>ReactiveEventsGateway.emit</code> con <code>.timeout(Duration.ofSeconds(t)).retry(n)</code>.</li><li><strong>Dead Letter Queue y reintentos del broker:</strong> <code>AsyncProps.withDLQRetry(true).retryDelay(...).maxRetries(...)</code> en <code>RabbitMQConfiguration</code> (<code>ms_products</code>).</li><li><strong>Infraestructura:</strong> HPA, PodDisruptionBudget (<code>ms_retrieve_role</code>), readiness/liveness/startup probes, canary con <code>DestinationRule</code> (Istio).</li><li><strong>Resilience4j:</strong> declarado (<code>resilience4j-spring-boot3/4</code>, YAML con <code>circuitbreaker.instances.testGet/testPost</code>), pero <strong>sin uso</strong>: no hay <code>@CircuitBreaker</code>, <code>@Retry</code> ni <code>@Bulkhead</code> en el código de producción; las instancias son la plantilla del scaffold.</li></ul><p class=\"lbl\">⚠️ <strong>No encontrado en los micros</strong></p><ul><li>CircuitBreaker, Bulkhead y RateLimiter en código de producción: NO ENCONTRADO. No digas que usas Resilience4j en producción.</li></ul><p><strong>Cómo contarlo:</strong> Habla de lo real (retry con filtro 5xx, failover de Aurora, timeouts, DLQ). Los 3 estados del CircuitBreaker los defiendes con el reto 13, diciendo que ahí lo implementaste.</p>", "bdd": "<hr class=\"sep\"><p class=\"lbl\">🧩 <strong>Ejemplo fácil</strong></p><p>BDD escribe el requisito como una historia que el negocio entiende y que además se ejecuta:</p><pre><code>Escenario: Saldo insuficiente\n  Dado una cuenta con saldo 100\n  Cuando intento retirar 150\n  Entonces el sistema rechaza el retiro</code></pre><p>TDD prueba el <em>código</em> desde el desarrollador; BDD prueba el <em>comportamiento</em> en lenguaje de negocio. Cuándo NO: lógica interna trivial, ahí un test unitario basta.</p><p class=\"lbl\">🏦 <strong>Cómo lo trabajamos en Entitlement</strong></p><ul><li><strong>BDD con Karate (sintaxis Gherkin), no Cucumber:</strong> <code>.feature</code> con <code>Given/When/Then</code> y tags <code>@SmokeTest</code>, <code>@rutaCritica</code>, p. ej. <code>Monetary_Limits_MR/ms_limit_create/deployment/acceptance-test/.../CreateBaasLimit.feature</code>; runner <code>CreateProductGroupRunner</code> (<code>@Karate.Test</code>) en <code>ms_products</code>. Dependencias <code>karate-junit5</code> y <code>cucumber-reporting</code> (solo reportes).</li><li><strong>Pruebas de aceptación</strong> en <code>deployment/acceptance-test</code> de cada micro (Serenity, SoapUI en <code>ms_actors</code>) y de rendimiento con JMeter en <code>deployment/performance-test</code>.</li><li><strong>Unitarias:</strong> JUnit 5 + Mockito + <code>StepVerifier</code>, p. ej. <code>GetSchemeClientUseCaseTest</code> (<code>@ExtendWith(MockitoExtension.class)</code>, <code>@ParameterizedTest</code>, <code>expectErrorSatisfies(... BusinessException ...)</code>).</li><li><strong>Calidad:</strong> Jacoco (<code>jacocoMergedReport</code>), <strong>mutation testing con Pitest</strong> y Sonar con <code>sonar.coverage.jacoco.xmlReportPaths</code>; Sonar excluye <code>MainApplication</code> y <code>config/**</code>.</li></ul><p class=\"lbl\">⚠️ <strong>No encontrado en los micros</strong></p><ul><li><code>io.cucumber</code> no aparece en ningún <code>.gradle</code>: lo tuyo en equipo es Karate; Cucumber lo practicas en el reto 14.</li></ul><p><strong>Cómo contarlo:</strong> \"Usamos Karate, que habla Gherkin, para aceptación; y Pitest para saber si los tests realmente detectan fallos\". Lo de Pitest suele impresionar.</p>", "reactivo": "<hr class=\"sep\"><p class=\"lbl\">🧩 <strong>Ejemplo fácil</strong></p><p>En una pizzería con un solo mesero, el imperativo es esperar parado en el mostrador hasta que salga la pizza. Reactivo es dejar el pedido y atender a otro cliente; cuando la pizza esté, te avisan.</p><pre><code>Mono&lt;Cliente&gt; c = repo.buscar(id)                 // nada se ejecuta todavía (lazy)\n    .switchIfEmpty(Mono.error(new NoExiste()))\n    .timeout(Duration.ofSeconds(2));\nc.subscribe(...);                                  // aquí arranca</code></pre><p>Cuándo NO: CRUD simple con poca concurrencia y librerías bloqueantes (JDBC): reactivo + <code>.block()</code> es peor que MVC.</p><p class=\"lbl\">🏦 <strong>Cómo lo trabajamos en Entitlement</strong></p><ul><li><strong>Todo el stack nuevo es WebFlux</strong> (Spring Boot 4.1.x en <code>client_parameters_ms</code>, <code>ms_actors</code>, <code>ms_admin_authorization</code>, <code>ms_products</code>, los nueve <code>ms_limit_*</code>, <code>ms_authorization_flows</code>…; Boot 3.5.x en <code>masam_*</code>, <code>products_information_ms</code>, <code>permitions_entitlement_ms</code>). Solo <code>ms_masam</code> es MVC.</li><li><strong>WebFlux funcional:</strong> <code>AvailableLimitRouter</code> (<code>route(POST(...), handler::availableLimit)</code>) y <code>ValidateClientLimitHandlerRequest</code> con <code>Mono.zip(modelMono, contextMono).map(t -&gt; new Command&lt;&gt;(t.getT1(), t.getT2()))</code>.</li><li><strong>Operadores reales:</strong> <code>switchIfEmpty(Mono.defer(() -&gt; Mono.error(...)))</code> en <code>GetSchemeClientUseCase</code>; <code>flatMap</code> anidados, <code>onErrorMap</code>, <code>onErrorResume</code>; <code>Flux.fromIterable(...).flatMap(...).collectList()</code> en <code>OwnerFlowUseCase</code>.</li><li><strong>Persistencia reactiva:</strong> R2DBC (<code>ReactiveCrudRepository</code> + <code>@Query</code>), <code>TransactionalOperator</code> (<code>SaveInitTransactionAdapter</code>), DynamoDB/S3 asíncronos.</li><li><strong>Lotes:</strong> <code>.buffer(BUFFER_SIZE).flatMap(...)</code> en <code>SaveEventPublicationInfoAdapter</code>; <code>subscribeOn(Schedulers.boundedElastic())</code> al envolver llamadas bloqueantes.</li><li><strong>Cuidados:</strong> <code>.subscribe()</code> fire-and-forget para logs funcionales (en <code>GetSchemeClientUseCase</code>) y <code>.block()</code> al arranque en <code>StateConfig</code>/<code>PrivilegeConfig</code>.</li></ul><p class=\"lbl\">⚠️ <strong>No encontrado en los micros</strong></p><ul><li><code>limitRate</code> y <code>onBackpressure*</code> explícitos: NO ENCONTRADO (el backpressure es el implícito de Reactor/R2DBC/Netty).</li></ul><p><strong>Cómo contarlo:</strong> Es tu tema fuerte: cuenta el flujo <code>Mono.zip</code> → caso de uso → R2DBC con <code>TransactionalOperator</code>, y explica cuándo <code>subscribeOn(boundedElastic)</code> y por qué <code>.block()</code> en el arranque no es lo mismo que en una petición.</p>", "eda": "<hr class=\"sep\"><p class=\"lbl\">🧩 <strong>Ejemplo fácil</strong></p><p>El tablero de pedidos de una cocina: el mesero (productor) pega la comanda y se va; cada estación (consumidor) toma las que le tocan. Nadie espera a nadie.</p><pre><code>// productor\neventos.emit(new PagoRealizado(id, monto));      // no sabe quién escucha\n// consumidor (at-least-once → puede llegar duplicado → debe ser idempotente)\nif (procesados.add(evento.id())) aplicar(evento);</code></pre><p>Cuándo NO: cuando necesitas respuesta inmediata y consistencia fuerte en la misma transacción.</p><p class=\"lbl\">🏦 <strong>Cómo lo trabajamos en Entitlement</strong></p><ul><li><strong>Broker real: RabbitMQ (AMQP) con <code>reactive-commons</code></strong> (<code>async-commons-rabbit-starter</code> 7.3.1) en casi todos los micros; mensajes en formato <strong>CloudEvents</strong>; contratos <strong>AsyncAPI</strong> (<code>ms_actors/deployment/ApiDoc/External_Events</code>, <code>Internal_Events</code>).</li><li><strong>Productor con persistencia previa (estilo outbox):</strong> <code>ReactiveEventsGateway.emit</code> (<code>client_parameters_ms</code>, <code>async-event-bus</code>): guarda en DynamoDB con <code>published=false</code> → <code>domainEventBus.emit(...)</code> → marca <code>published=true</code> con TTL en días → <code>.timeout(...).retry(...)</code>.</li><li><strong>Consumidores y DLQ por evento:</strong> <code>HandlerRegistryConfiguration</code> (<code>@EnableEventListeners</code>) con <code>listenDomainEvent(...)</code> y su <code>*_DLQ</code> (<code>Monetary_Transactions_MR/ms_authorization_flows</code>); el handler deserializa el CloudEvent y llama a un caso de uso (<code>CreateAuthorizationFlowDlqEventUseCase</code>).</li><li><strong>Reintentos del broker:</strong> <code>withDLQRetry(true).retryDelay(...).maxRetries(...)</code> en <code>ms_products</code>; <code>FailedEventsAdapter</code> publica los fallidos con el subject <code>masam.core.failed</code> (<code>masam_core_ms</code>).</li><li><strong>Event sourcing:</strong> tabla DynamoDB <code>eventSourcingTableName</code> y <code>DynamoDBTemplateAdapter</code> (<code>masam</code>).</li></ul><p class=\"lbl\">⚠️ <strong>No encontrado en los micros</strong></p><ul><li>Kafka y SQS/SNS: NO ENCONTRADO como broker. Idempotencia explícita del consumidor: NO ENCONTRADO (lo más cercano es <code>published</code> + id del evento en el productor). Es una brecha concreta y la cubre el reto 16.</li></ul><p><strong>Cómo contarlo:</strong> Cuenta el productor (guardar → emitir → marcar) y la DLQ. Si te preguntan Kafka, di que lo practicaste en el reto 16 y que en Entitlement es RabbitMQ; y si te preguntan idempotencia, defiende el <code>idsProcesados</code>.</p>", "iac": "<hr class=\"sep\"><p class=\"lbl\">🧩 <strong>Ejemplo fácil</strong></p><p>IaC es escribir la receta de la infraestructura en un archivo y versionarla, en vez de hacer clic en una consola:</p><pre><code>resource \"aws_s3_bucket\" \"reportes\" { bucket = \"reportes-${var.env}\" }</code></pre><p><code>terraform plan</code> te muestra qué va a cambiar <em>antes</em> de aplicarlo; así la infra se revisa en un PR como cualquier código. Cuándo NO: un experimento de 10 minutos que vas a borrar.</p><p class=\"lbl\">🏦 <strong>Cómo lo trabajamos en Entitlement</strong></p><ul><li><strong>Terraform, CloudFormation y Helm: NO existen en los micros.</strong> La infraestructura declarativa del proyecto es otra:</li><li class=\"sub\"><strong>Manifiestos Kubernetes/Istio parametrizados</strong> con tokens <code>#{variable}#</code> que se reemplazan en el release: <code>deployment/k8s/</code> de <code>ms_actors</code> (<code>app.yaml</code>, <code>configmap.yaml</code>, <code>hpa.yaml</code>, <code>gateway.yaml</code>, <code>destinationrule.yaml</code>, <code>authorization_policy.yaml</code>) y <code>pdb.yaml</code> en <code>ms_retrieve_role</code>.</li><li class=\"sub\"><strong>Base de datos como código con Liquibase Pro:</strong> <code>azure-pipelines.yml</code> con <code>liquibase-pro-task@1</code> en los repos <code>ENTITLEMENT_ENTMG_SQL</code> y <code>ENTITLEMENT_ENTNT_SQL</code>; changesets con <code>context:REF,QA,PDN</code>.</li><li class=\"sub\"><strong>Dockerfile</strong> versionado (<code>ms_actors/deployment/Dockerfile</code>, usuario no root).</li><li><strong>Escaneo en pipeline:</strong> job <code>Task_DevSecops</code> (<code>devsecops-engine@1</code>, pool <code>DevSecOps-Engine</code>) con configuración remota; qué escáneres corren adentro no se ve en el repo. Fortify/Trivy/Gitleaks/Dependency-Check explícitos: NO ENCONTRADO.</li></ul><p class=\"lbl\">⚠️ <strong>No encontrado en los micros</strong></p><ul><li>Terraform/CloudFormation: NO ENCONTRADO. Lo tuyo con Terraform son los retos 17 y 21.</li></ul><p><strong>Cómo contarlo:</strong> \"En Entitlement la infra es declarativa con K8s/Istio y Liquibase; Terraform lo practiqué con <code>tfsec</code>/<code>checkov</code> en el reto 17\". Es honesto y sigue siendo IaC.</p>", "owasp": "<hr class=\"sep\"><p class=\"lbl\">🧩 <strong>Ejemplo fácil</strong></p><p>IDOR (CWE-639): el usuario 7 pide <code>GET /documentos/8</code> y el sistema se lo entrega porque solo verificó que <strong>está logueado</strong> (autenticación), no que <strong>el documento es suyo</strong> (autorización).</p><pre><code>Documento d = repo.buscar(id);\nif (!d.duenoId().equals(usuarioAutenticado.id())) throw new AccesoDenegado();   // el chequeo que faltaba</code></pre><p>Cuándo NO sirve como arreglo: poner rate limiting. Limita la velocidad del ataque, no cierra el hueco.</p><p class=\"lbl\">🏦 <strong>Cómo lo trabajamos en Entitlement</strong></p><ul><li><strong>Autenticación en el borde (Istio), no en Spring Security:</strong> <code>ms_actors/deployment/k8s/authorization_policy.yaml</code> define <code>RequestAuthentication</code> con <code>jwtRules</code> (issuer + jwksUri) y <code>AuthorizationPolicy action: ALLOW</code> con <code>requestPrincipals</code>, claim <code>scope</code>, métodos y paths. Mismo patrón en <code>ms_admin_authorization</code>, <code>Monetary_Limits_MR/*</code> y <code>ms_retrieve_role</code>. No hay <code>spring-boot-starter-security</code>, <code>@PreAuthorize</code> ni <code>SecurityWebFilterChain</code>.</li><li><strong>Autorización de negocio en código (el corazón de Entitlement):</strong> <code>PermissionsUseCase.getPermission</code> (<code>ms_admin_authorization</code>): <code>findRelation</code> (exige la funcionalidad <code>MANAGEMENT_ENTITLEMENT</code>) → <code>validateRole</code> (rechaza <code>CON</code> y <code>ADA</code>) → <code>validatePrivilege</code> (solo admite 3 privilegios en un <code>Set.of</code>). Errores como <code>BusinessException(PERMISSIONS_NOT_PRIVILEGES_02_ERROR)</code>. Esta es <strong>exactamente la diferencia autenticación vs autorización</strong> que tu evaluador suele probar.</li><li><strong>Validación de entrada:</strong> value objects con invariantes (<code>Email</code> con regex y <code>maxLength 250</code>, <code>MessageId</code> UUID), <code>jakarta.validation</code> (<code>@NotNull</code>) en <code>InitTransactionHttpRequest</code>, validadores manuales (<code>CreateRoleValidation</code>); en Elixir <code>request_validation.ex</code> (largo y patrón de headers).</li><li><strong>Cabeceras y CORS:</strong> <code>SecurityHeadersConfig implements WebFilter</code> (<code>Strict-Transport-Security</code>, <code>X-Content-Type-Options: nosniff</code>, <code>Cache-Control: no-store</code>, quita <code>Server</code>); <code>CorsConfig</code> con orígenes configurables.</li><li><strong>Secretos:</strong> no van en configmaps, solo nombres (<code>aws.secret.rds</code>, <code>aws.redis.secretName</code>…); se leen de AWS Secrets Manager / Parameter Store.</li><li><strong>Hallazgos para mencionar con criterio:</strong> <code>ms_retrieve_role</code> (Elixir) conecta a Postgres con <code>ssl: true</code> pero <code>verify: :verify_none</code> (cifra pero no valida el certificado); <code>CorsConfig</code> usa <code>allowCredentials=true</code> con <code>allowedHeaders ALL</code>, vigilar que los orígenes sean explícitos.</li></ul><p class=\"lbl\">⚠️ <strong>No encontrado en los micros</strong></p><ul><li>Spring Security / <code>@PreAuthorize</code>: NO ENCONTRADO. SAST/DAST explícitos: solo Sonar y el DevSecOps Engine (no se ve su configuración).</li></ul><p><strong>Cómo contarlo:</strong> Autenticación la resuelve Istio (JWT); autorización la resuelve <code>PermissionsUseCase</code>. Es una respuesta sólida y específica.</p>", "ddd": "<hr class=\"sep\"><p class=\"lbl\">🧩 <strong>Ejemplo fácil</strong></p><p>Dinero no es un <code>double</code> suelto: es un objeto que se define por su valor, es inmutable y se valida al nacer.</p><pre><code>record Dinero(BigDecimal monto, String moneda) {\n  Dinero { if (monto.signum() &lt; 0) throw new IllegalArgumentException(\"monto negativo\"); }\n}</code></pre><p>(Ojo: <code>BigDecimal.equals</code> compara escala; usa <code>compareTo</code> para valor.) Cuándo NO: un CRUD sin reglas no necesita DDD completo.</p><p class=\"lbl\">🏦 <strong>Cómo lo trabajamos en Entitlement</strong></p><ul><li><strong>Value Objects con invariantes:</strong> carpeta <code>.../model/shared/common/value/</code> de <code>ms_actors</code> (<code>Email</code>, <code>MessageId</code>, <code>IdRelationship</code>, <code>IdRole</code>, <code>MdmCode</code>, <code>DocumentType</code>, <code>DocumentNumber</code>, <code>ProductNumber</code>, <code>FullName</code>, <code>MobilePhone</code>…). <code>Email</code> es un <code>record</code> que valida en el constructor compacto; <code>FlowStatus</code> (<code>ms_authorization_flows</code>) restringe a <code>ACTIVO/INACTIVO/ELIMINADO</code>.</li><li><strong>Eventos de dominio:</strong> <code>DomainEvent&lt;T&gt;</code> (id, source, type, subject, time, data) y <code>CreateDelegateEvent</code>, <code>CreateOwnerEvent</code>, <code>UpdateStatusRelationshipEvent</code>, <code>CreateExceptionRuleEvent</code> (<code>ms_actors</code>); <code>CreatedFlowEvent</code>, <code>UpdateFlowEvent</code>, <code>FlowStatusChanged</code> (<code>ms_authorization_flows</code>).</li><li><strong>Lenguaje ubicuo:</strong> Owner, Delegate, Relationship, Functionality, Privilege, Role, GranularGroup, ProductGroup, ExceptionRule, AuthorizationFlow, Approver, Limit.</li><li><strong>Bounded contexts = repos</strong> (<code>Entitlement_Service</code>, <code>Monetary_Transactions</code>, <code>Monetary_Limits</code>, <code>Entitlement_MASAM</code>).</li><li><strong>Agregados:</strong> no hay clases <code>*Aggregate</code>; son implícitos (modelos por caso de uso como <code>CreateFlowV2</code>, <code>CreateDelegate</code>, <code>ChangeRelationshipStatus</code>), y <code>CreateFlowRangeValidation</code> protege invariantes (rangos, último rango infinito).</li></ul><p class=\"lbl\">⚠️ <strong>No encontrado en los micros</strong></p><ul><li>Clases <code>AggregateRoot</code>/<code>*Aggregate</code> explícitas: NO ENCONTRADO.</li></ul><p><strong>Cómo contarlo:</strong> Value objects (<code>Email</code>, <code>RoleCode</code>) + eventos de dominio + bounded contexts por repo. Si te preguntan agregados, explica que son implícitos y qué invariante protege cada uno.</p>"};
+  TOPICS.forEach(function(t){ if (EXTRA[t.id]) t.back += EXTRA[t.id]; });
+  TOPICS = TOPICS.concat(MASTER_TOPICS);
+  var tmpDiv = document.createElement("div");
+  TOPICS.forEach(function(t){
+    tmpDiv.innerHTML = t.back;
+    t.searchText = (t.title + " " + t.front + " " + tmpDiv.textContent).toLowerCase();
+  });
+
+  var STORAGE_KEY = "assessment-senior-reviewed-v1";
+  var reviewed = {};
+  try {
+    var saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) reviewed = JSON.parse(saved) || {};
+  } catch(e) {}
+
+  function saveReviewed(){
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(reviewed)); } catch(e) {}
+  }
+
+  var state = { level: "all", query: "", mode: "grid", pending: false };
+
+  var filtersEl = document.getElementById("filters");
+  var groupsEl = document.getElementById("groups");
+  var searchEl = document.getElementById("search");
+  var emptyMsg = document.getElementById("emptyMsg");
+  var progressFill = document.getElementById("progressFill");
+  var progressLabel = document.getElementById("progressLabel");
+
+  var filterDefs = [
+    {key:"all", label:"Todos"},
+    {key:"resumen", label:"Resumen"},
+    {key:"trainer", label:"Trainer"},
+    {key:"junior", label:"Junior"},
+    {key:"advanced", label:"Advanced"},
+    {key:"senior", label:"Senior"},
+    {key:"manifiesto", label:"Manifiesto"},
+    {key:"practica", label:"Práctica real"},
+    {key:"master", label:"Master"}
+  ];
+
+  filterDefs.forEach(function(f){
+    var btn = document.createElement("button");
+    btn.className = "chip";
+    btn.type = "button";
+    btn.textContent = f.label;
+    btn.setAttribute("aria-pressed", String(state.level === f.key));
+    btn.addEventListener("click", function(){
+      state.level = f.key;
+      Array.prototype.forEach.call(filtersEl.children, function(c){
+        c.setAttribute("aria-pressed", "false");
+      });
+      btn.setAttribute("aria-pressed", "true");
+      refresh();
+    });
+    filtersEl.appendChild(btn);
+  });
+
+  function refresh(){
+    if (state.mode === "deck") { buildDeckOrder(); renderDeck(); } else { renderGrid(); }
+  }
+
+  function matches(topic){
+    var levelOk = state.level === "all" || topic.level === state.level;
+    var q = state.query.trim().toLowerCase();
+    var queryOk = !q || topic.searchText.indexOf(q) > -1;
+    var pendingOk = !state.pending || !reviewed[topic.id];
+    return levelOk && queryOk && pendingOk;
+  }
+
+  function updateProgress(){
+    var total = TOPICS.length;
+    var done = TOPICS.filter(function(t){ return reviewed[t.id]; }).length;
+    progressFill.style.width = (total ? (done/total*100) : 0) + "%";
+    progressLabel.textContent = done + " / " + total + " repasados";
+  }
+
+  function renderGrid(){
+    groupsEl.innerHTML = "";
+    var order = ["resumen","trainer","junior","advanced","senior","manifiesto","practica","master"];
+    var any = false;
+    order.forEach(function(levelKey){
+      var items = TOPICS.filter(function(t){ return t.level === levelKey && matches(t); });
+      if (!items.length) return;
+      any = true;
+      var group = document.createElement("div");
+      group.className = "group";
+      var h2 = document.createElement("h2");
+      var dot = document.createElement("span");
+      dot.className = "level-dot";
+      dot.style.background = "var(--" + levelKey + ")";
+      h2.appendChild(dot);
+      h2.appendChild(document.createTextNode(LEVELS[levelKey].label));
+      group.appendChild(h2);
+      var grid = document.createElement("div");
+      grid.className = "grid";
+      items.forEach(function(t){ grid.appendChild(buildCard(t)); });
+      group.appendChild(grid);
+      groupsEl.appendChild(group);
+    });
+    emptyMsg.hidden = any;
+    updateProgress();
+  }
+
+  function buildCard(t){
+    var card = document.createElement("div");
+    card.className = "card";
+    card.tabIndex = 0;
+    card.setAttribute("role","button");
+    card.setAttribute("aria-label", t.title + ", toca para ver la respuesta");
+
+    var inner = document.createElement("div");
+    inner.className = "card-inner";
+
+    var front = document.createElement("div");
+    front.className = "card-face front";
+    front.innerHTML =
+      '<span class="level-pill ' + LEVELS[t.level].cls + '">' + LEVELS[t.level].label + '</span>' +
+      '<span class="card-title">' + t.title + '</span>' +
+      '<span class="card-front-q">' + t.front + '</span>' +
+      '<span class="card-hint">Toca para revelar</span>';
+
+    var back = document.createElement("div");
+    back.className = "card-face back";
+    var backBody = document.createElement("div");
+    backBody.innerHTML = t.back;
+    back.appendChild(backBody);
+
+    var reviewRow = document.createElement("label");
+    reviewRow.className = "review-row";
+    var cb = document.createElement("input");
+    cb.type = "checkbox";
+    cb.checked = !!reviewed[t.id];
+    cb.addEventListener("click", function(ev){ ev.stopPropagation(); });
+    cb.addEventListener("change", function(){
+      if (cb.checked) reviewed[t.id] = true; else delete reviewed[t.id];
+      saveReviewed();
+      updateProgress();
+    });
+    reviewRow.appendChild(cb);
+    reviewRow.appendChild(document.createTextNode("Repasado"));
+    back.appendChild(reviewRow);
+
+    inner.appendChild(front);
+    inner.appendChild(back);
+    card.appendChild(inner);
+
+    function toggle(){
+      card.classList.toggle("flipped");
+      if (card.classList.contains("flipped")){
+        var h = Math.min(Math.max(back.scrollHeight + 4, 180), 560);
+        card.style.height = h + "px";
+      } else { card.style.height = ""; }
+    }
+    card.addEventListener("click", toggle);
+    card.addEventListener("keydown", function(ev){
+      if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); toggle(); }
+    });
+
+    return card;
+  }
+
+  searchEl.addEventListener("input", function(){
+    state.query = searchEl.value;
+    refresh();
+  });
+
+  /* ---- deck mode ---- */
+  var deckEl = document.getElementById("deck");
+  var deckToggle = document.getElementById("deckToggle");
+  var backToGrid = document.getElementById("backToGrid");
+  var deckCard = document.getElementById("deckCard");
+  var deckCounter = document.getElementById("deckCounter");
+  var deckLevelPill = document.getElementById("deckLevelPill");
+  var deckTitle = document.getElementById("deckTitle");
+  var deckFront = document.getElementById("deckFront");
+  var deckBack = document.getElementById("deckBack");
+
+  var deckOrder = [];
+  var deckIndex = 0;
+
+  function buildDeckOrder(){
+    deckOrder = TOPICS.filter(matches).map(function(t){ return t.id; });
+    deckIndex = 0;
+  }
+
+  function shuffle(arr){
+    for (var i = arr.length - 1; i > 0; i--){
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = arr[i]; arr[i] = arr[j]; arr[j] = tmp;
+    }
+    return arr;
+  }
+
+  function renderDeck(){
+    if (!deckOrder.length){
+      deckCounter.textContent = "Sin tarjetas para ese filtro";
+      deckTitle.textContent = "";
+      deckFront.textContent = "Ajusta el filtro o la búsqueda.";
+      deckBack.innerHTML = "";
+      deckLevelPill.textContent = "";
+      return;
+    }
+    deckCard.classList.remove("flipped");
+    deckInner.style.minHeight = "";
+    var t = TOPICS.filter(function(x){ return x.id === deckOrder[deckIndex]; })[0];
+    deckCounter.textContent = (deckIndex + 1) + " / " + deckOrder.length;
+    deckLevelPill.className = "level-pill " + LEVELS[t.level].cls;
+    deckLevelPill.textContent = LEVELS[t.level].label;
+    deckTitle.textContent = t.title;
+    deckFront.textContent = t.front;
+    deckBack.innerHTML = t.back;
+    deckCard.dataset.id = t.id;
+  }
+
+  function deckStep(delta){
+    if (!deckOrder.length) return;
+    deckIndex = (deckIndex + delta + deckOrder.length) % deckOrder.length;
+    renderDeck();
+  }
+
+  var deckInner = document.getElementById("deckCardInner");
+  function flipDeck(){
+    deckCard.classList.toggle("flipped");
+    if (deckCard.classList.contains("flipped")){
+      var h = Math.min(deckBack.parentNode.scrollHeight + 8, Math.round(window.innerHeight * 0.72));
+      deckInner.style.minHeight = Math.max(h, 180) + "px";
+    } else { deckInner.style.minHeight = ""; }
+  }
+  deckCard.addEventListener("click", flipDeck);
+  deckCard.addEventListener("keydown", function(ev){
+    if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); flipDeck(); }
+  });
+
+  document.getElementById("deckPrev").addEventListener("click", function(){ deckStep(-1); });
+  document.getElementById("deckNext").addEventListener("click", function(){ deckStep(1); });
+  document.getElementById("deckShuffle").addEventListener("click", function(){
+    shuffle(deckOrder);
+    deckIndex = 0;
+    renderDeck();
+  });
+  document.getElementById("deckKnow").addEventListener("click", function(){
+    var id = deckCard.dataset.id;
+    if (id){ reviewed[id] = true; saveReviewed(); updateProgress(); }
+    deckStep(1);
+  });
+
+  deckToggle.addEventListener("click", function(){
+    state.mode = "grid" === state.mode ? "deck" : "grid";
+    enterMode(state.mode);
+  });
+  backToGrid.addEventListener("click", function(){ enterMode("grid"); });
+
+  function enterMode(mode){
+    state.mode = mode;
+    if (mode === "deck"){
+      buildDeckOrder();
+      deckEl.classList.add("active");
+      groupsEl.hidden = true;
+      emptyMsg.hidden = true;
+      deckToggle.textContent = "Ver lista ▶";
+      renderDeck();
+      window.scrollTo(0, 0);
+    } else {
+      deckEl.classList.remove("active");
+      groupsEl.hidden = false;
+      deckToggle.textContent = "Modo repaso ▶";
+      renderGrid();
+    }
+  }
+
+  document.addEventListener("keydown", function(ev){
+    if (state.mode !== "deck") return;
+    var tag = (ev.target && ev.target.tagName) || "";
+    if (tag === "INPUT" || tag === "TEXTAREA") return;
+    if (ev.key === "ArrowRight") { ev.preventDefault(); deckStep(1); }
+    if (ev.key === "ArrowLeft") { ev.preventDefault(); deckStep(-1); }
+  });
+
+  var pendingBtn = document.getElementById("pendingToggle");
+  pendingBtn.addEventListener("click", function(){
+    state.pending = !state.pending;
+    pendingBtn.setAttribute("aria-pressed", String(state.pending));
+    refresh();
+  });
+
+  var resetBtn = document.getElementById("resetProgress");
+  var resetArmed = null;
+  resetBtn.addEventListener("click", function(){
+    if (!resetArmed){
+      resetBtn.textContent = "¿Seguro? Toca otra vez";
+      resetArmed = setTimeout(function(){ resetArmed = null; resetBtn.textContent = "Reiniciar"; }, 3000);
+      return;
+    }
+    clearTimeout(resetArmed); resetArmed = null;
+    resetBtn.textContent = "Reiniciar";
+    reviewed = {};
+    saveReviewed();
+    if (state.mode === "deck") { buildDeckOrder(); renderDeck(); updateProgress(); } else { renderGrid(); }
+  });
+
+  renderGrid();
+  updateProgress();
+})();
+</script>
+
+</body></html>
